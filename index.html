@@ -674,6 +674,26 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
 @container (max-width:560px){.pb::after{font-size:.6875rem}}
 /* art direction round 12: even contact buttons on phones */
 @media (max-width:560px){.contact{justify-items:stretch}.contact .btn{width:100%;justify-content:center}.contact .btn.solid{justify-self:stretch;min-height:54px}}
+/* round 13 */
+@media (prefers-reduced-motion:no-preference){.js .run{scroll-margin-top:0}}
+.hero .hf img{clip-path:none;-webkit-mask-image:linear-gradient(#000 calc(50% - 24px),transparent calc(50% + 24px));mask-image:linear-gradient(#000 calc(50% - 24px),transparent calc(50% + 24px));-webkit-mask-size:100% calc(200% + 48px);mask-size:100% calc(200% + 48px);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:0 100%;mask-position:0 100%;transition:-webkit-mask-position 1.3s cubic-bezier(.76,0,.24,1),mask-position 1.3s cubic-bezier(.76,0,.24,1)}
+.hero .hf img.on{-webkit-mask-position:0 0;mask-position:0 0}
+.hero .hf img.out{-webkit-mask-position:0 0;mask-position:0 0;transition:none}
+@media (min-width:900px){.does li.lead{display:grid;grid-template-columns:subgrid;align-items:baseline}.does li.lead b{margin:0}.does li.lead span{max-width:none}}
+@media (min-width:900px){.devs{grid-template-rows:auto auto auto;row-gap:0}.devs .dev{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}.devs .dev>:first-child{align-self:end}}
+@media (min-width:900px) and (max-width:1099px){.dev:not(.dk) figcaption{text-wrap:pretty}}
+@media (min-width:980px){#studio .pick{grid-template-columns:40% minmax(0,1fr)}}
+.more dt{letter-spacing:.16em;font-weight:600}
+@media (min-width:701px){.room figcaption{letter-spacing:.16em;font-weight:600}}
+.devnote{position:relative;z-index:3}
+.fr .try:focus-visible{outline-offset:-6px}
+@media print{.hero .hf img{-webkit-mask-image:none!important;mask-image:none!important}}
+/* round 14 */
+.does li.lead b{text-wrap:balance}
+@media (max-width:899px){.does li.lead b{margin-bottom:.5rem}}
+.hero .hf img{-webkit-mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));-webkit-mask-size:100% calc(200% + 120px);mask-size:100% calc(200% + 120px)}
+.grow{display:grid;gap:.6rem;max-width:62ch;margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.5rem;border-top:1px solid var(--line)}
+.grow p:not(.eyebrow){color:var(--mute);text-wrap:pretty}.grow b{color:var(--ink);font-weight:600}
 @media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph,.rv .fr,.rv #mBd,.hero .hf img{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}}
 </style>
@@ -705,7 +725,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
   <div class="in">
     <p class="eyebrow">Production proposal</p>
     <h1>From launch day to class fifty-five.</h1>
-    <p class="lede">How Taylormade Creative will produce the <span class="nb">ASSET-U</span> Enterprise Launch and all 55 Micro Masterclass Learning&trade; classes: one studio, one cinematic look, one partner.</p>
+    <p class="lede">How Taylormade Creative will produce the <span class="nb">ASSET-&#8288;U</span> Enterprise Launch and all 55 Micro Masterclass Learning&trade; classes: one studio, one cinematic look, one partner.</p>
     <dl class="slate">
       <div><dt>Prepared for</dt><dd>Danyel, <span class="nb">Bryanna Sims,</span> <span class="nb">Jocelyn McKissick,</span> <span class="nb">Vonna Matthews,</span> <span class="nb">Elle Manuel</span></dd></div>
       <div><dt>From</dt><dd>Elliott Taylor, Taylormade Creative</dd></div>
@@ -771,7 +791,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <div class="head split rv">
       <p class="eyebrow">Phase one &middot; The Enterprise Launch</p>
       <h2>The launch library, and the job of each piece.</h2>
-      <p class="lede">Every piece has one job and ends on one ask, so the launch moves people toward ASSET-U instead of only impressing them.</p>
+      <p class="lede">Every piece has one job and ends on one ask, so the launch moves people toward ASSET-&#8288;U instead of only impressing them.</p>
     </div>
     <p class="hint rv">Choose a piece to see its job.</p>
     <div class="lib rv">
@@ -783,9 +803,9 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
         <img src="img/social.jpg" alt="Concept frame: a woman in a bone coat walking toward camera across the studio floor." width="1600" height="1067" loading="lazy">
       </div>
       <div id="pieces">
-        <button class="piece" type="button" aria-expanded="true" data-i="0"><span class="t"><span class="h">Founder film</span><span class="go">See its job</span></span></button><div class="more"><div><p>2 to 3 minutes. Danyel on why she built ASSET-U, shot as a film, not an interview: one woman, one pool of light, the room falling away behind her. Built on the four pillars in your brief.</p><ol class="beats"><li><b>The Conviction</b>What she believes, in her first line.</li><li><b>The Journey</b>What it took to get here.</li><li><b>The Decision</b>The moment she chose to build it.</li><li><b>The Invitation</b>The ask, and the end card.</li></ol><dl><div><dt>Its job</dt><dd>Establish an institution on day one, in the film people send to each other.</dd></div><div><dt>What the viewer does next</dt><dd>Goes to asset-u.co.</dd></div></dl></div></div>
+        <button class="piece" type="button" aria-expanded="true" data-i="0"><span class="t"><span class="h">Founder film</span><span class="go">See its job</span></span></button><div class="more"><div><p>2 to 3 minutes. Danyel on why she built ASSET-&#8288;U, shot as a film, not an interview: one woman, one pool of light, the room falling away behind her. Built on the four pillars in your brief.</p><ol class="beats"><li><b>The Conviction</b>What she believes, in her first line.</li><li><b>The Journey</b>What it took to get here.</li><li><b>The Decision</b>The moment she chose to build it.</li><li><b>The Invitation</b>The ask, and the end card.</li></ol><dl><div><dt>Its job</dt><dd>Establish an institution on day one, in the film people send to each other.</dd></div><div><dt>What the viewer does next</dt><dd>Goes to asset-u.co.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="1"><span class="t"><span class="h">Team brand shoot</span><span class="go">See its job</span></span></button><div class="more"><div><p>All 11 in one session: one retouched portrait each in the portrait look, plus a group photograph in the film look.</p><dl><div><dt>Its job</dt><dd>Give the website, press and every profile one look on launch day.</dd></div><div><dt>What the viewer does next</dt><dd>Meets the team on the website.</dd></div></dl></div></div>
-        <button class="piece" type="button" aria-expanded="false" data-i="2"><span class="t"><span class="h">Creatorpreneur story videos</span><span class="go">See its job</span></span></button><div class="more"><div><p>11 videos, 60 to 90 seconds each: her story, and why she is part of ASSET-U. Each one filmed alone on the set, in the film look.</p><dl><div><dt>Its job</dt><dd>Show who is behind ASSET-U, in their own voices.</dd></div><div><dt>What the viewer does next</dt><dd>Follows her and ASSET-U before launch day.</dd></div></dl></div></div>
+        <button class="piece" type="button" aria-expanded="false" data-i="2"><span class="t"><span class="h">Creatorpreneur story videos</span><span class="go">See its job</span></span></button><div class="more"><div><p>11 videos, 60 to 90 seconds each: her story, and why she is part of ASSET-&#8288;U. Each one filmed alone on the set, in the film look.</p><dl><div><dt>Its job</dt><dd>Show who is behind ASSET-&#8288;U, in their own voices.</dd></div><div><dt>What the viewer does next</dt><dd>Follows her and ASSET-&#8288;U before launch day.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="3"><span class="t"><span class="h">Behind the scenes</span><span class="go">See its job</span></span></button><div class="more"><div><p>One film from the production day, cut as the launch teaser.</p><dl><div><dt>Its job</dt><dd>Build the countdown: the day the team came together.</dd></div><div><dt>What the viewer does next</dt><dd>Saves the launch date.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="4"><span class="t"><span class="h">Social cuts</span><span class="go">See its job</span></span></button><div class="more"><div><p>10 short cuts in 9:16 and 4:5, captioned, built from the day.</p><dl><div><dt>Its job</dt><dd>Carry the rollout across every channel from launch day, in one look.</dd></div><div><dt>What the viewer does next</dt><dd>Taps through to asset-u.co.</dd></div></dl></div></div>
       </div>
@@ -887,7 +907,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <div class="head split rv">
       <p class="eyebrow">Plan and timeline</p>
       <h2>The launch first. Then the classes, in two phases.</h2>
-      <p class="lede">Six steps from your yes to class 55. First cuts arrive within a week of each shoot, and a 24 to 48 hour rush is an optional addition.</p>
+      <p class="lede">Six steps from your yes to class 55. We set the production day and launch date with you on our call. First cuts arrive within a week of each shoot, and a 24 to 48 hour rush is an optional addition.</p>
     </div>
     <ol class="steps" id="steps">
       <li style="--i:0"><span class="when">This week</span><h3>Confirm</h3><p>Scope and counts confirmed, NDA signed, deposit received. The deposit holds your production day.</p></li>
@@ -897,6 +917,10 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       <li style="--i:4"><span class="when">Classes in blocks</span><h3>The class phases</h3><p>Two classes per expert per day, on dates we set together. Raw footage and project files hand over at the end of each phase.</p></li>
       <li style="--i:5"><span class="when">From launch</span><h3>Each release</h3><p>One class and its two promos, ready ahead of its release date.</p></li>
     </ol>
+    <div class="grow rv">
+      <p class="eyebrow">Room to grow</p>
+      <p><b>House of HER Sports, when you&rsquo;re ready.</b> The same studio carries it in its own brand system, alongside the classes from December through February. We add crew for the weeks the two overlap and travel for the February dates.</p>
+    </div>
   </div>
 </section>
 
@@ -939,7 +963,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       <div class="side"><p><b>The last 27, through class 55.</b> Up to six classes a shoot day, two per expert.</p><div class="grid55" data-a="28" data-b="27" aria-hidden="true"></div><p style="margin-top:1rem"><b>Payment.</b> Billed in installments, each one paid before its block of classes is filmed.</p></div>
     </div>
     <div class="total rv"><span>All three phases</span><b>$99,000</b></div>
-    <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait. The learning platform, mobile app, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
+    <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait. The learning platform, the mobile app and its network, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
 
     <details>
       <summary>Included in every phase</summary>
@@ -951,7 +975,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
         <li><span><b>4K capture</b>16:9, 9:16 and 4:5 delivery</span></li>
         <li><span><b>Look preview in your brand</b>Before the first shoot</span></li>
         <li><span><b>Music cleared for your use</b>Across your channels</span></li>
-        <li><span><b>Two revision rounds</b>On each piece. ASSET-U signs off all creative</span></li>
+        <li><span><b>Two revision rounds</b>On each piece. ASSET-&#8288;U signs off all creative</span></li>
       </ul>
     </details>
     <details>
@@ -970,8 +994,8 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       <summary>Terms</summary>
       <div class="terms">
         <p><b>Payment.</b> By bank transfer (ACH) or through HoneyBook. Deposits are non-refundable and hold your dates.</p>
-        <p><b>Use.</b> Unlimited use of the finished films, classes, promos and photographs across your channels, with raw footage and project files handed over each phase.</p>
-        <p><b>Approvals.</b> Two revision rounds on each piece. ASSET-U signs off all creative.</p>
+        <p><b>Ownership.</b> ASSET-&#8288;U owns the footage, the edits and the IP: every finished film, class, promo and photograph, with raw footage and project files handed over each phase.</p>
+        <p><b>Approvals.</b> Two revision rounds on each piece. ASSET-&#8288;U signs off all creative.</p>
         <p><b>Before we begin.</b> NDA signed, and releases for everyone on camera.</p>
       </div>
     </details>
@@ -984,34 +1008,34 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <div class="head split rv">
       <p class="eyebrow">Also in-house · one studio</p>
       <h2>The films are the start. We build where they live too.</h2>
-      <p class="lede">The platform your learner logs into, the app on her phone, the network of owners she joins, your live webinars, the weekly email and the print for launch day all come from one studio, the one that makes the films. One partner to brief, start to finish. No second vendor to manage.</p>
-      <p class="lede proof2">The platform is already built and in use: <a href="https://taylormadeacademy.com/" target="_blank" rel="noopener">Taylormade Academy</a> runs classes, live rooms and a member community on it today, and a university cohort program runs on it too. ASSET-U would be the next, in your brand. Our camera app, Taylormade Camera, is on the App Store.</p>
+      <p class="lede">You told us Education and Community is your fourth division, and that each founder brings a network to women owners. We build the home for both, from the same studio that makes the films. One partner to brief, start to finish.</p>
+      <p class="lede proof2">The platform is already built and in use: <a href="https://taylormadeacademy.com/" target="_blank" rel="noopener">Taylormade Academy</a> runs classes, live rooms and a member community on it today, and a university cohort program runs on it too. ASSET-&#8288;U would be the next, in your brand. Our camera app, Taylormade Camera, is on the App Store.</p>
     </div>
 
     <div class="devs rv">
       <figure class="dev dk">
-        <div class="brow"><div class="chrome"><i></i><i></i><i></i><span>ASSET-U Learning</span></div>
+        <div class="brow"><div class="chrome"><i></i><i></i><i></i><span>ASSET-&#8288;U Learning</span></div>
           <div class="fr wide" data-w="1280"><img src="img/lms-desktop.jpg" alt="The ASSET-U learning platform, showing this week&rsquo;s class" loading="lazy" width="1280" height="800">
             <video class="loop" muted loop playsinline preload="none" poster="img/lms-desktop.jpg" data-src="v/lms-loop-desktop.mp4" aria-label="A guided tour of the learning platform demo"></video>
             <button class="try" type="button" data-try aria-label="Try the platform and live room"></button></div></div>
         <button class="trybar" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Try the platform and live room</button>
-        <figcaption><b>The learning platform.</b> A working demo of how yours would look, made for this proposal. Take a class, hold to commit to the 1% action, meet the network, step into the live room.</figcaption>
+        <figcaption><b>The learning platform.</b> A working demo of how yours would look, made for this proposal. Meet the network, take a class, hold to commit to the 1% action, step into the live room.</figcaption>
       </figure>
       <figure class="dev">
         <div class="phone"><div class="fr tall" data-w="390"><img src="img/lms-phone.jpg" alt="The same platform as a mobile app" loading="lazy" width="780" height="1600">
             <video class="loop" muted loop playsinline preload="none" poster="img/lms-phone.jpg" data-src="v/lms-loop-phone.mp4" aria-label="A guided tour of the mobile app demo"></video>
             <button class="try" type="button" data-try aria-label="Try the app"></button></div></div>
         <button class="trybar" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Try the app</button>
-        <figcaption><b>The mobile app.</b> A concept of the ASSET-U app on her phone, with every class, every live session and her network of owners. Tap anything, including the Publish tab only your team sees.</figcaption>
+        <figcaption><b>The mobile app.</b> A concept of the ASSET-&#8288;U app on her phone, with every class, every live session and her network of owners. Tap anything, including the Publish tab only your team sees.</figcaption>
       </figure>
     </div>
     <p class="devnote rv"><button type="button" class="fsb" id="fsOpen">Open the demo full screen</button></p>
 
     <ul class="does rv">
-      <li class="lead"><b>A network and community, built in.</b> <span>Owners meet owners inside the same app. Each member keeps a card with what she offers and what she needs, gets three matched introductions a week, posts asks, offers and wins to one board, and joins a small circle of owners at her stage that meets every month. Messages stay private: she chooses who can reach her, and can report or block anyone.</span></li>
+      <li class="lead"><b>Education and Community, in the same app.</b> <span>Owners meet owners where they take the classes. Each member keeps a card of what she offers and what she needs, gets introductions matched to it, posts asks, offers and wins to one board, and joins a small circle of owners at her stage. Messages stay private: she chooses who can reach her, and can report or block anyone.</span></li>
       <li><b>Live webinars.</b> Live sessions and Q&amp;A inside the same login, with chat, polls and raised hands, recorded into the library afterward.</li>
-      <li><b>A learning platform made for ASSET-U.</b> All 55 classes, released one at a time, with progress, notes and a certificate at class 55.</li>
-      <li><b>A mobile app.</b> Her 1% action and this week&rsquo;s class in her pocket, in ASSET-U&rsquo;s brand.</li>
+      <li><b>A learning platform made for ASSET-&#8288;U.</b> All 55 classes, released one at a time, with progress, notes and a certificate at class 55.</li>
+      <li><b>A mobile app.</b> Her 1% action and this week&rsquo;s class in her pocket, in ASSET-&#8288;U&rsquo;s brand.</li>
       <li><b>Publishing your team can run.</b> Move a class to its release date. The release, the email and the reminder follow on their own.</li>
     </ul>
 
@@ -1028,7 +1052,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       </div>
       <div>
         <div class="mail" aria-live="polite">
-          <div class="hd"><i>A</i><div><b id="mSub">This week: Own your numbers</b><span>ASSET-U · to you</span></div></div>
+          <div class="hd"><i>A</i><div><b id="mSub">This week: Own your numbers</b><span>ASSET-&#8288;U · to you</span></div></div>
           <div class="bd" id="mBd"><img id="mImg" src="img/lms3.jpg" alt="" loading="lazy" style="object-position:40% 30%">
             <div class="tx"><small id="mEy">Micro Masterclass Learning&trade; · Class 6</small><strong id="mH">Thirty minutes. One number that runs your business.</strong><p id="mP">This week&rsquo;s class is open. Take it before Thursday and bring your questions to the live session.</p><span class="b" id="mB">Start the class</span></div></div>
         </div>
@@ -1056,44 +1080,44 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
           <div class="pm pm0"><img src="img/print.jpg" alt="A step and repeat wall and a pop-up banner with the ASSET-U logo in the studio" loading="lazy" width="1500" height="1000"></div>
           <div class="pm pm1"><div class="pcard"><button type="button" id="pcard" aria-pressed="false" aria-label="Flip the business card">
             <span class="f f1"><img src="img/asset-u-logo.png" alt="ASSET-U"><i class="tf">Tap to flip</i></span>
-            <span class="f f2"><b>Danyel</b><span>ASSET-U Enterprise Holdings</span><em>Build &middot; Own &middot; Amplify &middot; Protect</em></span>
+            <span class="f f2"><b>Danyel</b><span>ASSET-&#8288;U Enterprise Holdings</span><em>Build &middot; Own &middot; Amplify &middot; Protect</em></span>
           </button></div></div>
         </div>
         <p class="smp" id="pcap">Concept frame: step and repeat and pop-up banner in our studio.</p>
       </div>
     </div>
 
-    <div class="priced rv"><p><b>Add only what you want.</b> The platform, the app, live webinars, email and print are optional and sit outside the three phases above. We scope and quote each one with you.</p><a class="pq" href="mailto:taylormademd@gmail.com?subject=ASSET-U%3A%20platform%2C%20app%2C%20webinars%2C%20email%2C%20print">Tell us which pieces you want</a></div>
+    <div class="priced rv"><p><b>Add only what you want.</b> The platform, the app and its network, live webinars, email and print are optional and sit outside the three phases above. We scope and quote each one with you.</p><a class="pq" href="mailto:taylormademd@gmail.com?subject=ASSET-U%3A%20platform%2C%20app%2C%20network%2C%20webinars%2C%20email%2C%20print">Tell us which pieces you want</a></div>
   </div>
 </section>
 
-<div class="fs" id="fs" role="dialog" aria-modal="true" aria-label="ASSET-U learning platform demo"><div class="fst"><span>ASSET-U Learning · concept demo</span><button type="button" id="fsClose">Close demo</button></div></div>
+<div class="fs" id="fs" role="dialog" aria-modal="true" aria-label="ASSET-U learning platform demo"><div class="fst"><span>ASSET-&#8288;U Learning · concept demo</span><button type="button" id="fsClose">Close demo</button></div></div>
 
 <section class="dark wrap" id="twin" style="background:var(--ink-2)">
   <div class="in">
     <div class="head split rv">
       <p class="eyebrow">Optional addition &middot; AI twins</p>
       <h2>Your expertise, on screen anywhere.</h2>
-      <p class="lede">An AI twin shows up when your expert can&rsquo;t: on the website, in the community, across social. This one is Danyel. We built it for this proposal from a few public photos and one interview. The real one starts with a short studio session.</p>
+      <p class="lede">An AI twin shows up when your expert can&rsquo;t: on the website, in the community, across social. This one is Danyel. The real one starts with a short studio session.</p>
     </div>
     <figure class="twin-wide rv">
       <div class="tstage">
         <video id="tvd" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/twin-danyel.jpg" src="v/twin-danyel.mp4"></video><button type="button" class="tplay" data-for="tvd" aria-label="Play Danyel&rsquo;s AI twin, 32 seconds"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><em>Play Danyel&rsquo;s twin &middot; 0:32</em></button>
       </div>
-      <figcaption><b>Danyel&rsquo;s AI twin, a sample.</b><span>Scripted from that one interview. Sound on.</span></figcaption>
+      <figcaption><b>Danyel&rsquo;s AI twin, a sample.</b><span>Sound on.</span></figcaption>
     </figure>
     <div class="twin">
       <div class="rv">
         <ul class="twin-list" style="margin-top:0">
           <li><b>Built once per person,</b> from a short studio session and her approval of the look and voice</li>
           <li><b>Used for case-study videos</b> and short&#8209;form social</li>
-          <li><b>Likeness and AI consent</b> signed by everyone before anything is made</li>
+          <li><b>Likeness and AI consent</b> signed by everyone before production begins</li>
         </ul>
         <p class="next" style="margin-top:1.25rem">AI twins are not part of the three phases. They are priced per person under Optional additions.</p>
       </div>
       <figure class="twin-vid rv">
         <video id="tv" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/twin-poster.jpg" src="v/ai-twin.mp4"></video><button type="button" class="tplay" data-for="tv" aria-label="Play the second sample"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-        <figcaption>A second sample: an AI presenter made for ASSET-U, not a real person</figcaption>
+        <figcaption>A second sample: an AI presenter made for ASSET-&#8288;U, not a real person</figcaption>
       </figure>
     </div>
   </div>
@@ -1120,7 +1144,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     </div>
     <div class="foot">
       <img src="img/tc-logo-white.png" alt="Taylormade Creative" width="600" height="150" loading="lazy">
-      <span>&copy; 2026 <span class="nb">Taylormade Creative</span> &middot; Prepared for ASSET-U Enterprise Holdings &middot; Confidential &middot; Images are concept frames made for this proposal</span>
+      <span>&copy; 2026 <span class="nb">Taylormade Creative</span> &middot; Prepared for ASSET-&#8288;U Enterprise Holdings &middot; Confidential &middot; Images are concept frames made for this proposal</span>
     </div>
   </div>
 </section>
@@ -1220,10 +1244,11 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
   setTimeout(function(){rv.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('on')})},1200);
   // progress + nav
   var prog=d.getElementById('prog'),tick=false;
-  var barEl=d.querySelector('.bar'),barWant=null,barT=0;function barDk(y){var e=d.elementsFromPoint(innerWidth/2,y).filter(function(n){return !barEl.contains(n)})[0];return !!(e&&e.closest&&e.closest('.dark,.room'))}
+  var barEl=d.querySelector('.bar'),barWant=null,barT=0,barHold=false;function barDk(y){var e=d.elementsFromPoint(innerWidth/2,y).filter(function(n){return !barEl.contains(n)})[0];return !!(e&&e.closest&&e.closest('.dark,.room'))}
   function onScroll(){tick=false;var h=root.scrollHeight-innerHeight;prog.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';
-    var bb=barEl.getBoundingClientRect(),want=barDk(bb.top+1)&&barDk(bb.bottom-1);if(barWant===null){barWant=want;barEl.classList.toggle('ondark',want)}else if(want!==barWant){barWant=want;clearTimeout(barT);barT=setTimeout(function(){barEl.classList.toggle('ondark',barWant)},120)}frame()}
+    var bb=barEl.getBoundingClientRect(),want=barDk(bb.top+1)&&barDk(bb.bottom-1);if(barHold){}else if(barWant===null){barWant=want;barEl.classList.toggle('ondark',want)}else if(want!==barWant){barWant=want;clearTimeout(barT);barT=setTimeout(function(){barEl.classList.toggle('ondark',barWant)},120)}frame()}
   addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
+  [].forEach.call(d.querySelectorAll('.bar nav a'),function(a){a.addEventListener('click',function(){barHold=true;var done=false,rel=function(){if(done)return;done=true;barHold=false;onScroll()};addEventListener('scrollend',rel,{once:true});setTimeout(rel,1600)})});
   var links=[].slice.call(d.querySelectorAll('.bar nav a'));
   if('IntersectionObserver' in window){
     var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})},{rootMargin:'-45% 0px -50% 0px'});
@@ -1238,25 +1263,25 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     var fg=f.closest('figure'),tb=fg.querySelector('.trybar');var lab=tb.lastChild.textContent;tb.addEventListener('click',function(){if(f.classList.contains('live')){f.querySelector('iframe').remove();f.classList.remove('live');tb.classList.remove('x');tb.lastChild.textContent=lab;var lv=f.querySelector('video.loop');if(lv&&lv.getAttribute('src')&&!reduce){var pr=lv.play();if(pr&&pr.catch)pr.catch(function(){})}}else f.querySelector('[data-try]').click()});
     f.querySelector('[data-try]').addEventListener('click',function(){
       if(innerWidth<900){fsFrom=tb;d.getElementById('fsOpen').click();return}
-      var i=d.createElement('iframe');i.src='lms.html';i.title=w>400?'ASSET-U learning platform demo':'ASSET-U mobile app demo';i.setAttribute('loading','eager');
+      var i=d.createElement('iframe');i.src='lms.html';i.title=w>400?'ASSET-\u2060U learning platform demo':'ASSET-\u2060U mobile app demo';i.setAttribute('loading','eager');
       var lv=f.querySelector('video.loop');if(lv)lv.pause();f.appendChild(i);f.classList.add('live');fit();i.focus();tb.classList.add('x');tb.lastChild.textContent='\u00d7  Close demo';
     });
   });
   var loops=[].slice.call(d.querySelectorAll('video.loop'));
-  if(!reduce&&'IntersectionObserver' in window){var lo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target,live=v.parentNode.classList.contains('live');
+  if(!reduce&&'IntersectionObserver' in window){var lo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target,live=v.parentNode.classList.contains('live')||d.getElementById('fs').classList.contains('on');
     if(e.isIntersecting&&!live){if(!v.getAttribute('src'))v.src=v.getAttribute('data-src');var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}else v.pause()})},{threshold:.35});loops.forEach(function(v){lo.observe(v)})}
   var tps=[].slice.call(d.querySelectorAll('.tplay'));function twinStop(){tps.forEach(function(o){d.getElementById(o.getAttribute('data-for')).pause()})}
   tps.forEach(function(tp){var v=d.getElementById(tp.getAttribute('data-for'));tp.addEventListener('click',function(){tps.forEach(function(o){if(o!==tp){var ov=d.getElementById(o.getAttribute('data-for'));ov.pause();ov.controls=false;o.classList.remove('off')}});v.controls=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});tp.classList.add('off');v.focus({preventScroll:true})});v.addEventListener('ended',function(){var had=d.activeElement===v;v.controls=false;v.load();tp.classList.remove('off');if(had)setTimeout(function(){tp.focus({preventScroll:true})},450)})});
   var fs=d.getElementById('fs'),fo=d.getElementById('fsOpen');d.body.appendChild(fs);
-  fo.addEventListener('click',function(){if(!fs.querySelector('iframe')){var i=d.createElement('iframe');i.src='lms.html';i.title='ASSET-U learning platform demo';fs.appendChild(i)}fs.classList.add('on');d.body.style.overflow='hidden';inertAll(true);loops.forEach(function(v){v.pause()});twinStop();setTimeout(function(){d.getElementById('fsClose').focus()},80)});
+  fo.addEventListener('click',function(){if(!fs.querySelector('iframe')){var i=d.createElement('iframe');i.src='lms.html';i.title='ASSET-\u2060U learning platform demo';fs.appendChild(i)}fs.classList.add('on');d.body.style.overflow='hidden';inertAll(true);loops.forEach(function(v){v.pause()});twinStop();setTimeout(function(){d.getElementById('fsClose').focus()},80)});
   function inertAll(on){[].forEach.call(d.body.children,function(el){if(el!==fs&&el.tagName!=='SCRIPT')el.inert=on})}
   addEventListener('message',function(e){if(e.data==='lms-esc'&&fs.classList.contains('on'))fsX()});
   function fsX(){var fi=fs.querySelector('iframe');if(fi&&fi.contentWindow)fi.contentWindow.postMessage('lms-pause','*');fs.classList.remove('on');d.body.style.overflow='';inertAll(false);(fsFrom||fo).focus({preventScroll:true});fsFrom=null;
-    if(!reduce)loops.forEach(function(v){var b=v.getBoundingClientRect();if(v.getAttribute('src')&&!v.parentNode.classList.contains('live')&&(Math.min(b.bottom,innerHeight)-Math.max(b.top,0))>=b.height*.35){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}})}
+    if(!reduce)loops.forEach(function(v){var b=v.getBoundingClientRect();if(!v.parentNode.classList.contains('live')&&(Math.min(b.bottom,innerHeight)-Math.max(b.top,0))>=b.height*.35){if(!v.getAttribute('src'))v.src=v.getAttribute('data-src');var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}})}
   d.getElementById('fsClose').addEventListener('click',fsX);addEventListener('keydown',function(e){if(e.key==='Escape'&&fs.classList.contains('on'))fsX()});
   var MAILS=[['This week: Own your numbers','img/lms3.jpg','40% 30%','Micro Masterclass Learning\u2122 \u00b7 Class 6','Thirty minutes. One number that runs your business.','This week\u2019s class is open. Take it before Thursday and bring your questions to the live session.','Start the class'],
    ['Thursday, live: bring your questions','img/film.jpg','60% 30%','Live Q&A \u00b7 this Thursday','Your questions on this week\u2019s class, answered live.','Join from the platform or the app. If you miss it, the recording is filed in your library afterward.','Save my seat'],
-   ['ASSET-U is open','img/team.jpg','50% 40%','Launch day','Meet the women building it.','The founder film is out today. Meet the team behind it.','Watch the founder film']];
+   ['ASSET-\u2060U is open','img/team.jpg','50% 40%','Launch day','Meet the women building it.','The founder film is out today. Meet the team behind it.','Watch the founder film']];
   var mb=d.getElementById('mBd');
   var mtabs=d.getElementById('mtabs'),mailEl=d.querySelector('.mail'),mIdx=0,mAuto=!reduce&&('IntersectionObserver' in window),mTimer=0;
   function setMail(i,user){var b=mtabs.children[i],m=MAILS[i];mIdx=i;[].forEach.call(mtabs.children,function(x){x.setAttribute('aria-pressed',x===b)});mb.classList.add('sw');

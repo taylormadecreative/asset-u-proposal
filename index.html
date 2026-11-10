@@ -407,6 +407,9 @@ details[open] summary::after{content:"Hide"}
 @media (min-width:900px){.does{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4rem}}
 .does li{padding:1.1rem 0;border-bottom:1px solid var(--line);color:var(--mute)}
 .does li b{color:var(--ink);font-weight:600}
+.does li.lead{grid-column:1/-1;padding:1.4rem 0;font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);max-width:none}
+.does li.lead span{display:block;max-width:72ch}
+.does li.lead b{display:block;font:400 clamp(1.4rem,1.15rem + .9vw,1.9rem)/1.15 var(--didot);margin-bottom:.4rem}
 .duo{display:grid;gap:clamp(2rem,5vw,4rem);margin-top:clamp(4rem,9vw,7rem);align-items:center}
 @media (min-width:900px){.duo{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}.duo.flip>:first-child{order:2}}
 .duo h3{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);max-width:20ch;text-wrap:balance}
@@ -527,8 +530,8 @@ details[open] summary::after{content:"Hide"}
   .js .rv .sp .wi{transform:translateY(130%);transition:transform 1.1s var(--ease);transition-delay:calc(.08s + var(--l,0)*.1s)}
   .js .rv.on .sp .wi{transform:none}
   /* frames wipe open */
-  .js .rv .stage,.js .rv>.player,.js .rv .pstage,.js .rv .tstage,.js .rv .pf .ph{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.76,0,.24,1) .12s}
-  .js .rv.on .stage,.js .rv.on>.player,.js .rv.on .pstage,.js .rv.on .tstage,.js .rv.on .pf .ph{clip-path:inset(0)}
+  .js .rv .stage,.js .rv>.player,.js .rv .pstage,.js .rv .tstage,.js .rv .pf .ph,.js .rv .fr,.js .rv #mBd{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.76,0,.24,1) .12s}
+  .js .rv.on .stage,.js .rv.on>.player,.js .rv.on .pstage,.js .rv.on .tstage,.js .rv.on .pf .ph,.js .rv.on .fr,.js .rv.on #mBd{clip-path:inset(0)}
   /* the plan activates step by step as you scroll */
   .js .steps.sc li{opacity:.38;transition:opacity .6s var(--ease)}
   .js .steps.sc li.act{opacity:1}
@@ -645,7 +648,33 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
 @media (hover:hover){.trybar:hover{background:var(--ink-2);color:var(--bone)}}
 .devnote .fsb{min-height:44px;padding:0;border:0;background:transparent;color:var(--ink);text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
 .devnote .fsb:hover{background:transparent;border-color:transparent;color:var(--turq-t)}
-@media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}}
+/* round 12: the cover runs under the bar; the bar is dark only over dark */
+.hero{margin-top:-65px;padding-top:65px}
+.fcap{top:calc(65px + 1.25rem)}
+.bar.ondark{background:rgba(36,31,33,.86)}
+/* cover frames change with the page's top-down wipe, never a cross-fade */
+.hero .hf img{opacity:1;clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.76,0,.24,1);z-index:0}
+.hero .hf img.on{clip-path:inset(0);z-index:2}
+.hero .hf img.out{clip-path:inset(0);z-index:1;transition:none}
+/* graphic design round 12 */
+@media (min-width:900px){
+.duo{grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:4rem}
+.duo .mail,.duo .mail+.smp{max-width:none}
+.panel{--pp:clamp(1.25rem,3vw,2.5rem);grid-template-columns:minmax(0,1fr) calc((100% + 2*var(--pp) - 4rem)*5/12 - var(--pp))}
+.devnote{margin-top:-2.75rem}
+#house .head.split h2{align-self:start}}
+@media (min-width:900px) and (max-width:959px){#mtabs button{padding:0 .5rem}.mail .tx small{letter-spacing:.08em}}
+@media (min-width:701px) and (max-height:820px){.hero .in{padding-top:clamp(4rem,10vh,7rem)}}
+.dev figcaption,.incl li{text-wrap:balance}
+.lookcap{font-size:.9375rem}
+.slate dt,.fcap,.ptab .k,.run-stats dt,.steps .when,.run-num small{letter-spacing:.16em;font-weight:600}
+/* usability round 12 */
+.pb:focus-visible{z-index:3}
+.tl-head b{box-sizing:border-box;width:2.375rem;padding-inline:0;text-align:center}
+@container (max-width:560px){.pb::after{font-size:.6875rem}}
+/* art direction round 12: even contact buttons on phones */
+@media (max-width:560px){.contact{justify-items:stretch}.contact .btn{width:100%;justify-content:center}.contact .btn.solid{justify-self:stretch;min-height:54px}}
+@media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph,.rv .fr,.rv #mBd,.hero .hf img{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}}
 </style>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('go')},3200)</script>
@@ -955,7 +984,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <div class="head split rv">
       <p class="eyebrow">Also in-house · one studio</p>
       <h2>The films are the start. We build where they live too.</h2>
-      <p class="lede">The platform your learner logs into, the app on her phone, your live webinars, the weekly email and the print for launch day all come from one studio, the one that makes the films. One partner to brief, start to finish. No second vendor to manage.</p>
+      <p class="lede">The platform your learner logs into, the app on her phone, the network of owners she joins, your live webinars, the weekly email and the print for launch day all come from one studio, the one that makes the films. One partner to brief, start to finish. No second vendor to manage.</p>
       <p class="lede proof2">The platform is already built and in use: <a href="https://taylormadeacademy.com/" target="_blank" rel="noopener">Taylormade Academy</a> runs classes, live rooms and a member community on it today, and a university cohort program runs on it too. ASSET-U would be the next, in your brand. Our camera app, Taylormade Camera, is on the App Store.</p>
     </div>
 
@@ -966,19 +995,20 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
             <video class="loop" muted loop playsinline preload="none" poster="img/lms-desktop.jpg" data-src="v/lms-loop-desktop.mp4" aria-label="A guided tour of the learning platform demo"></video>
             <button class="try" type="button" data-try aria-label="Try the platform and live room"></button></div></div>
         <button class="trybar" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Try the platform and live room</button>
-        <figcaption><b>The learning platform.</b> A working demo of how yours would look, made for this proposal. Step into the live room, take a class, hold to commit to the 1% action.</figcaption>
+        <figcaption><b>The learning platform.</b> A working demo of how yours would look, made for this proposal. Take a class, hold to commit to the 1% action, meet the network, step into the live room.</figcaption>
       </figure>
       <figure class="dev">
         <div class="phone"><div class="fr tall" data-w="390"><img src="img/lms-phone.jpg" alt="The same platform as a mobile app" loading="lazy" width="780" height="1600">
             <video class="loop" muted loop playsinline preload="none" poster="img/lms-phone.jpg" data-src="v/lms-loop-phone.mp4" aria-label="A guided tour of the mobile app demo"></video>
             <button class="try" type="button" data-try aria-label="Try the app"></button></div></div>
         <button class="trybar" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg>Try the app</button>
-        <figcaption><b>The mobile app.</b> A concept of the ASSET-U app on her phone, with every class and live session. Tap anything, including the Publish tab only your team sees.</figcaption>
+        <figcaption><b>The mobile app.</b> A concept of the ASSET-U app on her phone, with every class, every live session and her network of owners. Tap anything, including the Publish tab only your team sees.</figcaption>
       </figure>
     </div>
     <p class="devnote rv"><button type="button" class="fsb" id="fsOpen">Open the demo full screen</button></p>
 
     <ul class="does rv">
+      <li class="lead"><b>A network and community, built in.</b> <span>Owners meet owners inside the same app. Each member keeps a card with what she offers and what she needs, gets three matched introductions a week, posts asks, offers and wins to one board, and joins a small circle of owners at her stage that meets every month. Messages stay private: she chooses who can reach her, and can report or block anyone.</span></li>
       <li><b>Live webinars.</b> Live sessions and Q&amp;A inside the same login, with chat, polls and raised hands, recorded into the library afterward.</li>
       <li><b>A learning platform made for ASSET-U.</b> All 55 classes, released one at a time, with progress, notes and a certificate at class 55.</li>
       <li><b>A mobile app.</b> Her 1% action and this week&rsquo;s class in her pocket, in ASSET-U&rsquo;s brand.</li>
@@ -1129,7 +1159,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     // the cover runs through the story: founder film, launch day, class one, class fifty-five
     var FC=['Concept frame \u00b7 The founder film','Concept frame \u00b7 Class one','Concept frame \u00b7 Class fifty-five'];
     coverTick=function(){if(d.hidden||scrollY>hero.offsetHeight||!root.classList.contains('go'))return;var n=(hfi+1)%hf.length,im=hf[n],pv=hf[hfi];if(!im.complete||!im.naturalWidth)return;
-      im.classList.remove('first');im.classList.add('on','kb');pv.classList.remove('on');setTimeout(function(){pv.classList.remove('kb','first')},2100);hfi=n;
+      im.classList.remove('first');im.classList.add('on','kb');pv.classList.add('out');pv.classList.remove('on');setTimeout(function(){pv.classList.remove('kb','first','out')},1500);hfi=n;
       fcap.style.opacity=0;setTimeout(function(){fcap.textContent=FC[n];fcap.style.opacity=1},520)};
   }
   // counters
@@ -1152,7 +1182,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
   // 55 Mondays wall
   var run=d.getElementById('run'),pin=run.querySelector('.pin'),wall=d.getElementById('wall'),cells=[],rN=d.getElementById('runN'),rC=d.getElementById('runC'),rP=d.getElementById('runP'),rL=d.getElementById('runLine'),rB=d.getElementById('runBar'),rCur=-1,rFull=null;
   var WI=['lms3','classset','lms4','story','lms1','lms2','film','lms5','lms6','hero'];
-  var wCols=matchMedia('(max-width:820px)').matches?5:11;for(var k=0;k<55;k++){var c=d.createElement('i'),im=new Image();im.alt='';im.decoding='async';im.loading='lazy';im.src='img/w-'+WI[(k*7+Math.floor(k/wCols)*2)%WI.length]+'.jpg';im.style.objectPosition=(28+(k*37)%46)+'% '+(18+(k*23)%30)+'%';c.appendChild(im);wall.appendChild(c);cells.push(c)}
+  var wCols=matchMedia('(max-width:820px)').matches?5:11;for(var k=0;k<55;k++){var c=d.createElement('i'),im=new Image();im.alt='';im.decoding='async';im.loading='lazy';im.src='img/w-'+WI[(k*7+Math.floor(k/wCols)*(wCols===5?4:2))%WI.length]+'.jpg';im.style.objectPosition=(28+(k*37)%46)+'% '+(18+(k*23)%30)+'%';c.appendChild(im);wall.appendChild(c);cells.push(c)}
   function setRun(n,full){
     if(n!==rCur){cells.forEach(function(c,i){c.classList.toggle('on',i<n);c.classList.toggle('cur',i===n-1)});rN.textContent=n;rC.textContent=n;rP.textContent=n*2;
       var tx=n<=1?'Class one. The standard is set.':n<=28?'Phase two. Classes 1 to 28.':n<55?'Phase three. Classes 29 to 55.':'Class fifty-five. The library is complete.';if(rL.textContent!==tx){rL.textContent=tx;rL.classList.remove('sw');void rL.offsetWidth;rL.classList.add('sw')}
@@ -1190,14 +1220,14 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
   setTimeout(function(){rv.forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight)el.classList.add('on')})},1200);
   // progress + nav
   var prog=d.getElementById('prog'),tick=false;
-  var barEl=d.querySelector('.bar');
+  var barEl=d.querySelector('.bar'),barWant=null,barT=0;function barDk(y){var e=d.elementsFromPoint(innerWidth/2,y).filter(function(n){return !barEl.contains(n)})[0];return !!(e&&e.closest&&e.closest('.dark,.room'))}
   function onScroll(){tick=false;var h=root.scrollHeight-innerHeight;prog.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';
-    var be=d.elementFromPoint(innerWidth/2,barEl.getBoundingClientRect().bottom+2);barEl.classList.toggle('ondark',!!(be&&be.closest&&be.closest('.dark,.room')));frame()}
+    var bb=barEl.getBoundingClientRect(),want=barDk(bb.top+1)&&barDk(bb.bottom-1);if(barWant===null){barWant=want;barEl.classList.toggle('ondark',want)}else if(want!==barWant){barWant=want;clearTimeout(barT);barT=setTimeout(function(){barEl.classList.toggle('ondark',barWant)},120)}frame()}
   addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
   var links=[].slice.call(d.querySelectorAll('.bar nav a'));
   if('IntersectionObserver' in window){
     var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})},{rootMargin:'-45% 0px -50% 0px'});
-    links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)so.observe(s)});
+    links.forEach(function(a){var s=d.querySelector(a.getAttribute('href'));if(s)so.observe(s)});[d.querySelector('.hero'),d.getElementById('ask')].forEach(function(s){if(s)so.observe(s)});
   }
 
   var fsFrom=null;

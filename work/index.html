@@ -88,9 +88,10 @@ footer h2{max-width:18ch}
   <header>
     <p class="kicker">Taylormade Creative &middot; Prepared for ASSET-U</p>
     <h1>Work samples for ASSET-U</h1>
-    <p class="lede">A cinematic AI commercial, micro-lessons, learning platforms, social reels, AI hosts, AI twins and more, made by Elliott Taylor. The micro-lessons are the closest to the Micro Masterclass format.</p>
+    <p class="lede">A cinematic AI commercial, long-form podcast and training work, micro-lessons, learning platforms, social reels, AI hosts, AI twins and more, made by Elliott Taylor. The micro-lessons are the closest to the Micro Masterclass format.</p>
     <ul class="index">
       <li><a href="#commercials">Cinematic AI commercial<b>1</b></a></li>
+      <li><a href="#longform">Long-form and training<b>3</b></a></li>
       <li><a href="#lessons">Micro-lessons<b>4</b></a></li>
       <li><a href="#platforms">Learning platforms<b>3</b></a></li>
       <li><a href="#social">Social reels<b>4</b></a></li>
@@ -106,6 +107,20 @@ footer h2{max-width:18ch}
     </div>
     <div class="feature">
       <figure><video controls playsinline preload="none" poster="p/hide-and-haunt.jpg" src="v/hide-and-haunt.mp4"></video><figcaption><b>Hide &amp; Haunt<span class="len">1:00</span></b><span>A walk-through commercial for an immersive entertainment attraction</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section id="longform">
+    <div class="head">
+      <h2>Long-form and training</h2>
+      <p>Full-length work to sit with: a complete podcast episode filmed and edited in our Dallas studio, an interview-led brand film, and an injector-training lesson with motion graphics.</p>
+    </div>
+    <div class="feature">
+      <figure><video controls playsinline preload="none" poster="p/auntie-pb-ep1.jpg" data-hls="v/auntie-pb-ep1/index.m3u8"></video><figcaption><b>Auntie PB, Episode 1<span class="len">21:47</span></b><span>A full podcast episode filmed in our studio on three cameras, edited with a cold open, punch-ins and word-by-word captions</span></figcaption></figure>
+    </div>
+    <div class="wide" style="margin-top:clamp(1.25rem,2.5vw,2rem)">
+      <figure><video controls playsinline preload="none" poster="p/toni-guy-academy.jpg" src="v/toni-guy-academy.mp4"></video><figcaption><b>TONI&amp;GUY Academy<span class="len">0:53</span></b><span>An interview-led brand film for the academy</span></figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="p/iasms-frontalis.jpg" src="v/iasms-frontalis.mp4"></video><figcaption><b>Frontalis, It&rsquo;s A Secret Academy<span class="len">1:39</span></b><span>An injector-training lesson with motion graphics, one of a four-lesson series</span></figcaption></figure>
     </div>
   </section>
 
@@ -199,6 +214,12 @@ footer h2{max-width:18ch}
 </div>
 
 <script>
+// the long-form episode streams in small pieces (Safari plays it natively; other browsers load hls.js)
+(function(){var vs=[].slice.call(document.querySelectorAll('video[data-hls]'));if(!vs.length)return;
+  if(vs[0].canPlayType('application/vnd.apple.mpegurl')){vs.forEach(function(v){v.src=v.getAttribute('data-hls')});return}
+  var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.17/hls.min.js';
+  s.onload=function(){if(!window.Hls||!Hls.isSupported())return;vs.forEach(function(v){var h=new Hls({autoStartLoad:false,capLevelToPlayerSize:true});h.loadSource(v.getAttribute('data-hls'));h.attachMedia(v);v.addEventListener('play',function(){h.startLoad()},{once:true})})};
+  document.head.appendChild(s)})();
 document.addEventListener('play',function(e){
   document.querySelectorAll('video').forEach(function(v){if(v!==e.target&&!v.paused)v.pause()});
 },true);

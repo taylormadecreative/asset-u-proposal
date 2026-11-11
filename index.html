@@ -692,13 +692,86 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
 .does li.lead b{text-wrap:balance}
 @media (max-width:899px){.does li.lead b{margin-bottom:.5rem}}
 .hero .hf img{-webkit-mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));-webkit-mask-size:100% calc(200% + 120px);mask-size:100% calc(200% + 120px)}
-.grow{display:grid;gap:.6rem;max-width:62ch;margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.5rem;border-top:1px solid var(--line)}
-.grow p:not(.eyebrow){color:var(--mute);text-wrap:pretty}.grow b{color:var(--ink);font-weight:600}
-@media (min-width:760px){.grow{max-width:none;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:2.5rem;row-gap:0;align-items:baseline}.grow p:not(.eyebrow){grid-column:2 / -1;max-width:62ch}}
+/* 11/11 addendum: House of HER Sports timeline, rate card, brief checklist */
+#rates,#hohs{scroll-margin-top:96px}
+.hohs{margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.5rem;border-top:1px solid var(--line)}
+.hh-head{display:grid;gap:.7rem}
+.hh-head h3{text-wrap:balance}
+.hh-head p:not(.eyebrow){color:var(--mute);max-width:62ch;text-wrap:pretty}
+.hh-chart{display:grid;row-gap:1rem;margin-top:clamp(1.75rem,3vw,2.5rem)}
+.hh-row{display:grid;gap:.5rem}
+.hh-name{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--turq-t)}
+.hh-track{position:relative}
+.hh-axis>span{display:none}
+.hh-axis .hh-track{height:1.6rem;border-bottom:1px solid var(--line)}
+.hh-axis .hh-track span{position:absolute;left:calc(var(--x)*1%);bottom:0;height:1.6rem;padding:0 0 .4rem .5rem;border-left:1px solid var(--line);display:flex;align-items:flex-end;font-size:.8125rem;font-weight:500;line-height:1;color:var(--ink)}
+.hh-axis b{font-weight:inherit}.hh-axis i{font-style:normal}
+@media (max-width:520px){.hh-axis i{display:none}}
+.hh-row:not(.hh-axis) .hh-track{background:linear-gradient(90deg,transparent calc(34.44% - .5px),var(--line) calc(34.44% - .5px),var(--line) calc(34.44% + .5px),transparent calc(34.44% + .5px),transparent calc(68.89% - .5px),var(--line) calc(68.89% - .5px),var(--line) calc(68.89% + .5px),transparent calc(68.89% + .5px))}
+.hh-cls{display:block;position:relative;isolation:isolate;padding:.8rem 18% .8rem .9rem;color:var(--bone);font-size:.875rem;line-height:1.35}
+.hh-cls::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ink);transform-origin:left;-webkit-mask-image:linear-gradient(90deg,#000 80%,transparent);mask-image:linear-gradient(90deg,#000 80%,transparent)}
+.hh-cls>span{position:relative;display:block}
+.hh-ev{height:4.4rem}
+.hh-ev::before{content:"";position:absolute;left:0;right:0;top:5px;height:1px;background:var(--line)}
+.hh-pt{position:absolute;left:calc(var(--x)*1%);top:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.8125rem;font-weight:600;line-height:1;white-space:nowrap;color:var(--ink)}
+.hh-pt::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--turq);box-shadow:0 0 0 3px var(--bone)}
+.hh-pt.st{transform:none;align-items:flex-start}
+.hh-rng{position:absolute;left:calc(var(--x)*1%);width:calc(var(--w)*1%);top:2.5rem;display:flex;flex-direction:column;align-items:center;gap:.45rem;font-size:.8125rem;font-weight:600;line-height:1;white-space:nowrap;color:var(--ink)}
+.hh-rng i{display:block;width:100%;height:6px;background:var(--turq);transform-origin:left}
+.hh-key{margin-top:1.75rem}
+.hh-k{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:.5rem}
+.hh-key dl{display:grid;column-gap:2.5rem}
+.hh-key dl div{display:grid;grid-template-columns:7.75rem minmax(0,1fr);gap:1rem;align-items:baseline;padding:.65rem 0;border-top:1px solid var(--line);font-size:.9375rem}
+.hh-key dt{font:400 1.1rem/1.2 var(--didot);color:var(--ink);word-spacing:-.08em}
+.hh-key dd{color:var(--mute)}
+.hh-note{margin-top:.85rem;font-size:.8125rem;color:var(--mute)}
+@media (min-width:760px){.hh-head,.hh-row,.hh-key{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:2.5rem}.hh-head{align-items:baseline}.hh-head>:not(.eyebrow),.hh-row>.hh-track,.hh-key>*{grid-column:2/-1}.hh-row{align-items:center}.hh-axis>span{display:block}.hh-key{display:grid}}
+@media (min-width:1100px){.hh-key dl{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:no-preference){
+  .js .hohs .hh-cls::before{transform:scaleX(0);transition:transform 1.4s var(--ease) .25s}
+  .js .hohs.on .hh-cls::before{transform:none}
+  .js .hohs .hh-cls>span,.js .hohs .hh-pt,.js .hohs .hh-rng{opacity:0;transition:opacity .7s var(--ease) calc(.9s + var(--i,0)*.14s)}
+  .js .hohs .hh-cls>span{transition-delay:.75s}
+  .js .hohs.on .hh-cls>span,.js .hohs.on .hh-pt,.js .hohs.on .hh-rng{opacity:1}
+  .js .hohs .hh-rng i{transform:scaleX(0);transition:transform .9s var(--ease) calc(1s + var(--i,0)*.14s)}
+  .js .hohs.on .hh-rng i{transform:none}
+}
+.rc{display:grid;gap:2rem 4rem;margin:clamp(2.5rem,5vw,4rem) 0 clamp(2.5rem,5vw,3.5rem);padding-top:1.75rem;border-top:1px solid var(--line-d)}
+@media (min-width:900px){.rc{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}.rc-head{grid-column:1/-1}}
+.rc-head{display:grid;gap:.6rem}
+.rc-head h3{text-wrap:balance}
+.rc-head p:not(.eyebrow){color:var(--mute-d);max-width:56ch}
+.rc-k{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute-d)}
+.rc-n{font:400 clamp(3rem,2rem + 3.2vw,4.75rem)/1 var(--didot);color:var(--bone);margin:.75rem 0 .85rem;font-variant-numeric:tabular-nums;word-spacing:-.08em}
+.rc-d{color:var(--mute-d);max-width:38ch;text-wrap:pretty}
+.rc-sum{margin-top:1.4rem}
+.rc-sum div{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.25rem 1rem;padding:.8rem 0;border-top:1px solid var(--line-d);font-size:.9375rem;color:var(--mute-d)}
+.rc-sum dd{margin-left:auto;text-align:right;color:var(--bone)}
+.rc-sum dd b{font-weight:600}
+@media (max-width:560px){.rc-sum div{display:grid;gap:.15rem}.rc-sum dd{margin-left:0;text-align:left}}
+.rc .adds{grid-template-columns:1fr;padding-bottom:0;margin-top:.75rem}
+.rc-tot{max-width:none;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-top:1rem;border-top:1px solid rgba(247,243,239,.55);font-size:.9375rem;color:var(--mute-d)}
+.rc-tot b{font:400 1.6rem/1 var(--didot);color:var(--bone);font-variant-numeric:tabular-nums}
+.bl{display:grid;gap:2.5rem 4rem}
+@media (min-width:980px){.bl{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}}
+.bl h3{margin-bottom:.9rem}
+.bl li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1.25rem;align-items:baseline;padding:.95rem 0;border-top:1px solid var(--line)}
+.bl li:last-child{border-bottom:1px solid var(--line)}
+.bl-t{color:var(--mute);font-size:.9375rem;text-wrap:pretty}
+.bl-t b{display:block;color:var(--ink);font-weight:600;font-size:1rem;margin-bottom:.15rem}
+.bl-s{justify-self:end;text-align:right;white-space:nowrap;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.bl-s.inc{color:var(--turq-t)}
+.bl-s.inc::before{content:"";display:inline-block;width:.75em;height:.38em;border-left:2px solid;border-bottom:2px solid;transform:translateY(-.3em) rotate(-45deg);margin-right:.6em}
+.bl-s.add{font:400 1.2rem/1 var(--didot);letter-spacing:0;text-transform:none;word-spacing:-.08em}
+.bl-s.add small{display:block;margin-bottom:.4rem;font:600 .6875rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;word-spacing:normal;color:var(--mute)}
+.bl-s.tbd{white-space:normal;max-width:7.5rem;line-height:1.35}
+a.bl-s.go{display:inline-flex;align-items:center;min-height:44px;margin-block:-.75rem;color:var(--turq-t);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;transition:color .2s,transform .16s var(--ease)}
+@media (hover:hover){a.bl-s.go:hover{color:var(--ink)}}
+a.bl-s.go:active{transform:translateY(1px)}
 @media (max-width:899px){.does li.lead b{margin-bottom:.75rem}}
 .hero .hf img.out{filter:brightness(.4);transition:filter 1.1s var(--ease)}
 #fs:not(.on){pointer-events:none}
-@media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph,.rv .fr,.rv #mBd,.hero .hf img{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}}
+@media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph,.rv .fr,.rv #mBd,.hero .hf img{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}.hh-cls::before,.hh-rng i{transform:none!important}.hh-cls>span,.hh-pt,.hh-rng{opacity:1!important}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}}
 </style>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('go')},3200)</script>
@@ -714,6 +787,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       <a href="#run">Classes</a>
       <a href="#plan">Plan</a>
       <a href="#invest" class="keep">Investment</a>
+      <a href="#brief">Your brief</a>
       <a href="#house">Platform</a>
       <a href="#twin">AI twins</a>
       <a href="#contact" class="keep">Contact</a>
@@ -807,8 +881,8 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
         <img src="img/social.jpg" alt="Concept frame: a woman in a bone coat walking toward camera across the studio floor." width="1600" height="1067" loading="lazy">
       </div>
       <div id="pieces">
-        <button class="piece" type="button" aria-expanded="true" data-i="0"><span class="t"><span class="h">Founder film</span><span class="go">See its job</span></span></button><div class="more"><div><p>2 to 3 minutes. Danyel on why she built ASSET-&#8288;U, shot as a film, not an interview: one woman, one pool of light, the room falling away behind her. Built on the four pillars in your brief.</p><ol class="beats"><li><b>The Conviction</b>What she believes, in her first line.</li><li><b>The Journey</b>What it took to get here.</li><li><b>The Decision</b>The moment she chose to build it.</li><li><b>The Invitation</b>The ask, and the end card.</li></ol><dl><div><dt>Its job</dt><dd>Establish an institution on day one, in the film people send to each other.</dd></div><div><dt>What the viewer does next</dt><dd>Goes to asset-u.co.</dd></div></dl></div></div>
-        <button class="piece" type="button" aria-expanded="false" data-i="1"><span class="t"><span class="h">Team brand shoot</span><span class="go">See its job</span></span></button><div class="more"><div><p>All 11 in one session: one retouched portrait each in the portrait look, plus a group photograph in the film look.</p><dl><div><dt>Its job</dt><dd>Give the website, press and every profile one look on launch day.</dd></div><div><dt>What the viewer does next</dt><dd>Meets the team on the website.</dd></div></dl></div></div>
+        <button class="piece" type="button" aria-expanded="true" data-i="0"><span class="t"><span class="h">Founder film</span><span class="go">See its job</span></span></button><div class="more"><div><p>2 to 3 minutes. Danyel on why she built ASSET-&#8288;U, shot as a film, not an interview: one woman, one pool of light, the room falling away behind her. Built on the four pillars in your brief, with 3 to 5 founder clips of about 30 seconds cut from the same interview.</p><ol class="beats"><li><b>The Conviction</b>What she believes, in her first line.</li><li><b>The Journey</b>What it took to get here.</li><li><b>The Decision</b>The moment she chose to build it.</li><li><b>The Invitation</b>The ask, and the end card.</li></ol><dl><div><dt>Its job</dt><dd>Establish an institution on day one, in the film people send to each other.</dd></div><div><dt>What the viewer does next</dt><dd>Goes to asset-u.co.</dd></div></dl></div></div>
+        <button class="piece" type="button" aria-expanded="false" data-i="1"><span class="t"><span class="h">Team brand shoot</span><span class="go">See its job</span></span></button><div class="more"><div><p>All 11 in one session: one retouched portrait each in the portrait look, plus a group photograph in the film look, with LinkedIn banner crops. Danyel also gets her signature portrait and the Two States diptych: her in motion, beside her editorial portrait.</p><dl><div><dt>Its job</dt><dd>Give the website, press and every profile one look on launch day.</dd></div><div><dt>What the viewer does next</dt><dd>Meets the team on the website.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="2"><span class="t"><span class="h">Creatorpreneur story videos</span><span class="go">See its job</span></span></button><div class="more"><div><p>11 videos, 60 to 90 seconds each: her story, and why she is part of ASSET-&#8288;U. Each one filmed alone on the set, in the film look.</p><dl><div><dt>Its job</dt><dd>Show who is behind ASSET-&#8288;U, in their own voices.</dd></div><div><dt>What the viewer does next</dt><dd>Follows her and ASSET-&#8288;U before launch day.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="3"><span class="t"><span class="h">Behind the scenes</span><span class="go">See its job</span></span></button><div class="more"><div><p>One film from the production day, cut as the launch teaser.</p><dl><div><dt>Its job</dt><dd>Build the countdown: the day the team came together.</dd></div><div><dt>What the viewer does next</dt><dd>Saves the launch date.</dd></div></dl></div></div>
         <button class="piece" type="button" aria-expanded="false" data-i="4"><span class="t"><span class="h">Social cuts</span><span class="go">See its job</span></span></button><div class="more"><div><p>10 short cuts in 9:16 and 4:5, captioned, built from the day.</p><dl><div><dt>Its job</dt><dd>Carry the rollout across every channel from launch day, in one look.</dd></div><div><dt>What the viewer does next</dt><dd>Taps through to asset-u.co.</dd></div></dl></div></div>
@@ -911,19 +985,43 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <div class="head split rv">
       <p class="eyebrow">Plan and timeline</p>
       <h2>The launch first. Then the classes, in two phases.</h2>
-      <p class="lede">Six steps from your yes to class 55. We set the production day and launch date with you on our call. First cuts arrive within a week of each shoot, and a 24 to 48 hour rush is an optional addition.</p>
+      <p class="lede">Six steps from your yes to class 55. Send us the production day that works for Danyel; once we confirm it, your deposit holds it. First cuts arrive within a week of each shoot, and a 24 to 48 hour rush is an optional addition.</p>
     </div>
     <ol class="steps" id="steps">
-      <li style="--i:0"><span class="when">This week</span><h3>Confirm</h3><p>Scope and counts confirmed, NDA signed, deposit received. The deposit holds your production day.</p></li>
-      <li style="--i:1"><span class="when">Before the shoot</span><h3>Prepare</h3><p>You send the mood board, brand files and scripts. We send back a look preview in your brand and the run of show.</p></li>
-      <li style="--i:2"><span class="when">Date held on deposit</span><h3>Production day</h3><p>One day at the studio: the founder film, 11 team portraits and the group photograph, and the 11 story videos. Behind the scenes is filmed all day.</p></li>
+      <li style="--i:0"><span class="when">This week</span><h3>Confirm</h3><p>Production day confirmed, scope and counts set, NDA signed, deposit received. The deposit holds your production day.</p></li>
+      <li style="--i:1"><span class="when">Before the shoot</span><h3>Prepare</h3><p>You send the mood board, brand files and scripts. We send back a look preview in your brand and the run of show, and book hair, makeup and styling.</p></li>
+      <li style="--i:2"><span class="when">Date held on deposit</span><h3>Production day</h3><p>One day at the studio: the founder film, Danyel&rsquo;s signature portrait and Two States diptych, 11 team portraits and the group photograph, and the 11 story videos. Behind the scenes is filmed all day.</p></li>
       <li style="--i:3"><span class="when">Within a week</span><h3>Launch edit</h3><p>Photo selects and first cuts, then final files in 16:9, 9:16 and 4:5, captioned.</p></li>
       <li style="--i:4"><span class="when">Classes in blocks</span><h3>The class phases</h3><p>Two classes per expert per day, on dates we set together. Raw footage and project files hand over at the end of each phase.</p></li>
       <li style="--i:5"><span class="when">From launch</span><h3>Each release</h3><p>One class and its two promos, ready ahead of its release date.</p></li>
     </ol>
-    <div class="grow rv">
-      <p class="eyebrow">Room to grow</p>
-      <p><b>House of HER Sports, when you&rsquo;re ready.</b> The same studio carries it in its own brand system, alongside the classes from December through February. We add crew for the weeks the two overlap and travel for the February dates.</p>
+    <div class="hohs rv" id="hohs">
+      <div class="hh-head">
+        <p class="eyebrow">Room to grow</p>
+        <h3>House of HER Sports, alongside the classes.</h3>
+        <p>Your brief asks for crew and availability from December through February. The classes keep shooting in blocks at the studio while House of HER Sports runs in its own brand system, scoped from its own brief. We add crew for the weeks the two overlap and travel for the February dates.</p>
+      </div>
+      <div class="hh-chart" aria-hidden="true">
+        <div class="hh-row hh-axis"><span></span><div class="hh-track"><span style="--x:0"><b>Dec</b><i>ember</i></span><span style="--x:34.44"><b>Jan</b><i>uary</i></span><span style="--x:68.89"><b>Feb</b><i>ruary</i></span></div></div>
+        <div class="hh-row"><p class="hh-name">The classes</p><div class="hh-track"><span class="hh-cls"><span>Class blocks at the studio, on dates we set together</span></span></div></div>
+        <div class="hh-row"><p class="hh-name">House of HER Sports</p><div class="hh-track hh-ev">
+          <span class="hh-pt st" style="--x:0;--i:0">Dec 1</span>
+          <span class="hh-pt" style="--x:65.56;--i:1">Jan 29</span>
+          <span class="hh-rng" style="--x:68.89;--w:12.22;--i:2"><i></i>Feb 1&ndash;12</span>
+          <span class="hh-pt" style="--x:83.33;--i:3">Feb 14</span>
+        </div></div>
+      </div>
+      <div class="hh-key">
+        <p class="hh-k">House of HER Sports dates, from your brief</p>
+        <dl>
+          <div><dt>Dec 1</dt><dd>Digital launch</dd></div>
+          <div><dt>Jan 29</dt><dd>Hard-launch content bank complete</dd></div>
+          <div><dt>Feb 1&ndash;12</dt><dd>Hard-launch campaign</dd></div>
+          <div><dt>Feb 14</dt><dd>Super Bowl LXI, SoFi Stadium</dd></div>
+          <div><dt>Feb 9&ndash;10 or 17</dt><dd>Bigger Than The Game, date to confirm</dd></div>
+        </dl>
+        <p class="hh-note">Drawn to scale, December 1 to February 28.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -942,8 +1040,9 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     </div>
     <div class="panel" id="ph0" role="tabpanel" aria-labelledby="t0">
       <div><h3>The Enterprise Launch includes</h3><ul>
-        <li><b>Founder film,</b> 2 to 3 minutes, with a cinematic open and visual effects</li>
-        <li><b>Team brand shoot:</b> 11 people, one retouched portrait each, plus a group photograph</li>
+        <li><b>Founder film,</b> 2 to 3 minutes, with a cinematic open and visual effects, plus 3 to 5 founder clips</li>
+        <li><b>Team brand shoot:</b> 11 people, one retouched portrait each, plus a group photograph and LinkedIn banner crops</li>
+        <li><b>Danyel&rsquo;s signature portrait</b> and the <b>Two States diptych:</b> her in motion, beside her editorial portrait</li>
         <li><b>11 creatorpreneur story videos,</b> 60 to 90 seconds each</li>
         <li><b>Behind-the-scenes film</b> and <b>10 captioned social cuts</b></li>
         <li><b>Raw footage and project files</b> from the production day, handed over at wrap</li>
@@ -965,6 +1064,34 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
         <li><b>Raw footage and project files,</b> handed over at the end of the phase</li>
       </ul></div>
       <div class="side"><p><b>The last 27, through class 55.</b> Up to six classes a shoot day, two per expert.</p><div class="grid55" data-a="28" data-b="27" aria-hidden="true"></div><p style="margin-top:1rem"><b>Payment.</b> Billed in installments, each one paid before its block of classes is filmed.</p></div>
+    </div>
+    <div class="rc rv" id="rates">
+      <div class="rc-head">
+        <p class="eyebrow">The rate card</p>
+        <h3>Per class, and per launch piece.</h3>
+        <p>The phase prices above, broken out. They add up to the same $99,000.</p>
+      </div>
+      <div class="rc-cls">
+        <p class="rc-k">Each class</p>
+        <p class="rc-n">$1,450</p>
+        <p class="rc-d">One thirty&#8209;minute class with its 30&#8209;second and 15&#8209;second promos: filmed, edited, graded and captioned.</p>
+        <dl class="rc-sum">
+          <div><dt>Raw footage and project files</dt><dd>$1,500 a phase</dd></div>
+          <div><dt>Classes 1 to 28</dt><dd><span class="nb">28 &times; $1,450 + $1,500</span> <span class="nb">= <b>$42,100</b></span></dd></div>
+          <div><dt>Classes 29 to 55</dt><dd><span class="nb">27 &times; $1,450 + $1,500</span> <span class="nb">= <b>$40,650</b></span></dd></div>
+        </dl>
+      </div>
+      <div class="rc-launch">
+        <p class="rc-k">The Enterprise Launch, piece by piece</p>
+        <ul class="adds">
+          <li><span><b>Founder film</b>2 to 3 minutes, plus 3 to 5 founder clips</span><em>$3,500</em></li>
+          <li><span><b>Team brand shoot</b>11 portraits, the group photograph, Danyel&rsquo;s signature portrait and Two States diptych, LinkedIn banner crops</span><em>$1,500</em></li>
+          <li><span><b>11 creatorpreneur story videos</b>$750 each</span><em>$8,250</em></li>
+          <li><span><b>Behind the scenes</b>The film and 10 captioned social cuts</span><em>$1,500</em></li>
+          <li><span><b>Raw footage and project files</b>From the production day</span><em>$1,500</em></li>
+        </ul>
+        <p class="rc-tot"><span>Enterprise Launch</span><b>$16,250</b></p>
+      </div>
     </div>
     <div class="total rv"><span>All three phases</span><b>$99,000</b></div>
     <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait. The learning platform, the mobile app and its network, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
@@ -988,8 +1115,11 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
         <li><span><b>AI twin</b>A digital twin of one person, built once</span><em>$1,500 ea.</em></li>
         <li><span><b>AI twin case-study video</b>Finished and captioned</span><em>$750 ea.</em></li>
         <li><span><b>MML in 60</b>A 60-second lesson cut from a class</span><em>$200 ea.</em></li>
+        <li><span><b>MML trailer</b>One trailer for the series, cut from the classes</span><em>$750</em></li>
+        <li><span><b>MML preview clip</b>A short first look at the series</span><em>$200</em></li>
         <li><span><b>Executive films</b>For each C-suite leader, 60 to 90 seconds</span><em>$500 ea.</em></li>
-        <li><span><b>Founder clips</b>About 30 seconds each, captioned</span><em>$150 ea.</em></li>
+        <li><span><b>Leadership one-liners</b>One short line on camera from each leader</span><em>$150 ea.</em></li>
+        <li><span><b>Enterprise B-roll</b>Division groups, details and candids, in stills and video</span><em>$1,500</em></li>
         <li><span><b>Extra retouched photos</b>Beyond one portrait per person</span><em>$35 ea.</em></li>
         <li><span><b>Rush delivery</b>24 to 48 hours</span><em>+25%</em></li>
       </ul>
@@ -999,13 +1129,57 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
       <div class="terms">
         <p><b>Payment.</b> By bank transfer (ACH) or through HoneyBook. Deposits are non&#8209;refundable and hold your dates.</p>
         <p><b>Ownership.</b> ASSET-&#8288;U owns the footage, the edits and the IP: every finished film, class, promo and photograph, with raw footage and project files handed over each phase.</p>
-        <p><b>Approvals.</b> Two revision rounds on each piece. ASSET-&#8288;U signs off all creative.</p>
+        <p><b>Approvals.</b> Two revision rounds on each piece. ASSET-&#8288;U signs off all creative, and the 48&#8209;hour review in your brief keeps every date on track.</p>
+        <p><b>Hair, makeup and styling.</b> We book them for the production day and add the cost once the date and headcount are set.</p>
         <p><b>Before we begin.</b> NDA signed, and releases for everyone on camera.</p>
       </div>
     </details>
   </div>
 </section>
 
+<section class="wrap" id="brief" style="background:var(--beige)">
+  <div class="in">
+    <div class="head split rv">
+      <p class="eyebrow">Your brief, line by line</p>
+      <h2>Where everything sits.</h2>
+      <p class="lede">The deliverables, production and terms in your Creative Production Partner Brief, each with our answer: included in the three phases, or an add-on at the price shown.</p>
+    </div>
+    <div class="bl rv">
+      <div>
+        <h3>The deliverables</h3>
+        <ul>
+          <li><span class="bl-t"><b>Founder portraits</b>Signature portrait and the Two States diptych, with 4:5, 9:16 and LinkedIn banner crops</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Founder story film</b>The four pillars and end card, a 16:9 master with 4:5 and 9:16 cuts, captioned</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Founder clips</b>3 to 5 sound bites, about 30 seconds each, captioned</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Leadership portraits</b>A retouched portrait for each of the 11, and the group photograph</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Leadership one-liners</b>One short line on camera from each leader</span><span class="bl-s add"><small>Add-on</small>$150 ea.</span></li>
+          <li><span class="bl-t"><b>MML courses</b>55 thirty-minute classes in 16:9, edited with graphics and your branded elements, platform-ready</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>MML promos</b>A 30-second and a 15-second promo for every class, 9:16, captioned</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>MML trailer</b>One trailer for the series, cut from the classes</span><span class="bl-s add"><small>Add-on</small>$750</span></li>
+          <li><span class="bl-t"><b>MML preview clip</b>A short first look at the series</span><span class="bl-s add"><small>Add-on</small>$200</span></li>
+          <li><span class="bl-t"><b>MML in 60</b>A 60-second lesson cut from a class</span><span class="bl-s add"><small>Add-on</small>$200 ea.</span></li>
+          <li><span class="bl-t"><b>Behind the scenes</b>A film from the production day and 10 captioned social cuts</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Enterprise B-roll</b>Division groups, details and candids, in stills and video</span><span class="bl-s add"><small>Add-on</small>$1,500</span></li>
+          <li><span class="bl-t"><b>Creators</b>Each of the 11 creatorpreneurs: her portrait and a 60 to 90 second story video</span><span class="bl-s inc">Included</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Production and terms</h3>
+        <ul>
+          <li><span class="bl-t"><b>Studio and sets</b>Our downtown Dallas studio: a portrait set, and the film set for the founder film, stories and classes</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Formats</b>4K capture; 16:9, 4:5 and 9:16 delivery; captions on all video</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Hair, makeup and styling</b>We book them for the production day. The cost is added once the date and headcount are set</span><span class="bl-s tbd">Priced with the date</span></li>
+          <li><span class="bl-t"><b>Turnaround</b>First cuts within a week of each shoot; a 24 to 48 hour rush at +25%</span><span class="bl-s inc">Included</span></li>
+          <li><span class="bl-t"><b>Approvals</b>Two revision rounds on each piece. Your team signs off all creative, with the 48-hour review in your brief</span><span class="bl-s inc">Agreed</span></li>
+          <li><span class="bl-t"><b>Ownership and handover</b>ASSET-&#8288;U owns the footage, the edits and the IP. Raw footage and project files hand over each phase</span><span class="bl-s inc">Agreed</span></li>
+          <li><span class="bl-t"><b>Music, releases and consent</b>Music cleared for your channels. Releases, and likeness and AI consent, signed before production</span><span class="bl-s inc">Agreed</span></li>
+          <li><span class="bl-t"><b>Costs</b>A rate for each class and a price for each launch piece</span><a class="bl-s go" href="#rates">The rate card</a></li>
+          <li><span class="bl-t"><b>Capacity</b>Crew and availability for the classes and House of HER Sports, December through February</span><a class="bl-s go" href="#hohs">The plan</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="wrap" id="house">
   <div class="in">
@@ -1137,7 +1311,7 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
     <h2 class="rv" id="closeH">You build the institution. <span class="l2">We would be honored to help the world see it.</span></h2>
     <div class="sign rv">
       <div>
-        <p class="lede" style="margin-bottom:1.25rem">Reply with a yes to the three phases, or with the changes you want. Name any extras in the same reply. I&rsquo;ll send the agreement, and your deposit holds your production day.</p>
+        <p class="lede" style="margin-bottom:1.25rem">Reply with a yes to the three phases and the production day that works for Danyel, or with the changes you want. Name any extras in the same reply. Once we confirm the day, I&rsquo;ll send the agreement, and your deposit holds it.</p>
         <b>Elliott Taylor</b><span>Founder and Creative Director, Taylormade Creative</span>
       </div>
       <div class="contact">

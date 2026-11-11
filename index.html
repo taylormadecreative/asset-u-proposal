@@ -693,6 +693,60 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
 @media (max-width:899px){.does li.lead b{margin-bottom:.5rem}}
 .hero .hf img{-webkit-mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));mask-image:linear-gradient(#000 calc(50% - 60px),transparent calc(50% + 60px));-webkit-mask-size:100% calc(200% + 120px);mask-size:100% calc(200% + 120px)}
 /* 11/11 addendum: House of HER Sports timeline, rate card, brief checklist */
+.bb{margin-top:.15rem}
+.bb p{max-width:none;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.4rem 2rem}
+.bb-l{padding:.95rem 0;border-bottom:1px solid var(--line-d);color:var(--mute-d);font-size:1rem}
+.bb-l b{font:400 clamp(1.35rem,1.1rem + .9vw,1.8rem)/1 var(--didot);color:var(--turq-l);font-variant-numeric:tabular-nums;word-spacing:-.08em}
+.bb-t{padding-top:1rem;color:var(--bone);font-weight:500}
+.bb-t b{font:400 clamp(2.4rem,1.5rem + 3.2vw,3.8rem)/1 var(--didot);font-variant-numeric:tabular-nums}
+.bb .bb-n{display:block;margin-top:.7rem;font-size:.875rem;color:var(--mute-d);max-width:62ch}
+.qb{margin-top:clamp(3rem,6vw,4.5rem);padding-top:1.75rem;border-top:1px solid var(--line-d)}
+.qb-head{display:grid;gap:.6rem;margin-bottom:clamp(1.5rem,3vw,2.25rem)}
+.qb-head h3{max-width:30ch;text-wrap:balance}
+.qb-grid{display:grid;gap:2.5rem}
+@media (min-width:980px){.qb-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:3.5rem;align-items:start}.qb-sum{position:sticky;top:96px}}
+.qb fieldset{border:0;margin:0;padding:0;min-width:0}
+.qb fieldset+fieldset{margin-top:2rem}
+.qb legend{padding:0;margin-bottom:.55rem}
+.qb-tg,.qb-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;padding:.8rem 0;border-top:1px solid var(--line-d)}
+.qb-tg{grid-template-columns:auto minmax(0,1fr) auto;cursor:pointer;min-height:56px}
+.qb-t{color:var(--mute-d);font-size:.9375rem;line-height:1.5}
+.qb-t b{display:block;color:var(--bone);font-weight:500}
+.qb-t i{display:block;margin-top:.15rem;font-style:normal;color:var(--bone);font-size:.875rem;font-variant-numeric:tabular-nums}
+.qb-sub{color:var(--turq-l);font-weight:600}
+.qb-tg em{font:400 1.2rem/1 var(--didot);font-style:normal;color:var(--bone);font-variant-numeric:tabular-nums;transition:opacity .2s}
+.qb-tg input{appearance:none;-webkit-appearance:none;margin:0;width:24px;height:24px;border:1.5px solid var(--mute-d);display:grid;place-content:center;cursor:pointer;transition:background-color .2s,border-color .2s}
+.qb-tg input::before{content:"";width:11px;height:6px;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-1px) rotate(-45deg) scale(0);transition:transform .16s var(--ease)}
+.qb-tg input:checked{background:var(--turq-l);border-color:var(--turq-l)}
+.qb-tg input:checked::before{transform:translateY(-1px) rotate(-45deg) scale(1)}
+.qb-tg input:focus-visible{outline:2px solid var(--turq-l);outline-offset:3px}
+.qb-tg:has(input:not(:checked)) .qb-t b,.qb-tg:has(input:not(:checked)) em{opacity:.5}
+.qb-st{display:inline-grid;grid-template-columns:44px 3.25rem 44px;height:44px;border:1px solid var(--line-d);transition:border-color .2s}
+.qb-row.on .qb-st{border-color:var(--turq-l)}
+.qb-st button{background:none;border:0;padding:0;color:var(--bone);font:400 1.35rem/1 var(--sans);cursor:pointer;transition:background-color .15s,transform .12s var(--ease)}
+.qb-st button:active:not([aria-disabled="true"]){transform:scale(.92)}
+@media (hover:hover){.qb-st button:hover:not([aria-disabled="true"]){background:rgba(247,243,239,.1)}}
+.qb-st button[aria-disabled="true"]{color:rgba(247,243,239,.25);cursor:default}
+.qb-st button:focus-visible,.qb-st input:focus-visible{outline:2px solid var(--turq-l);outline-offset:-2px}
+.qb-st input{width:100%;min-width:0;background:transparent;border:0;border-inline:1px solid var(--line-d);border-radius:0;color:var(--bone);text-align:center;font:600 1rem/1 var(--sans);font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.qb-st input::-webkit-inner-spin-button,.qb-st input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
+@media (max-width:480px){.qb-row{grid-template-columns:1fr;gap:.6rem}.qb-st{justify-self:start}}
+.qb-sum{background:var(--ink-2);padding:clamp(1.25rem,3vw,2rem)}
+.qb-sum ul{margin-top:.4rem}
+.qb-sum li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.6rem 0;border-top:1px solid var(--line-d);font-size:.9375rem;color:var(--mute-d)}
+.qb-sum li b{color:var(--bone);font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.qb-sum li.grp{border:0;padding:1rem 0 .3rem;font-size:.6875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--mute-d)}
+.qb-sum li.grp:first-child{padding-top:.4rem}
+.qb-sum li.disc span,.qb-sum li.disc b{color:var(--turq-l)}
+.qb-sum li.none{border:0;color:var(--mute-d)}
+.qb-total{max-width:none;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-top:.4rem;padding-top:1rem;border-top:2px solid var(--gold);color:var(--bone);font-weight:500}
+.qb-total b{font:400 clamp(2.2rem,1.6rem + 2vw,3rem)/1 var(--didot);font-variant-numeric:tabular-nums;word-spacing:-.08em}
+.qb-hint{margin-top:.85rem;color:var(--turq-l);font-size:.9375rem}
+.qb-note{margin-top:.85rem;font-size:.8125rem;color:var(--mute-d)}
+.qb-act{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+.qb-bar{display:none}
+@media (max-width:979px){.qb-bar{position:sticky;bottom:0;z-index:4;display:flex;justify-content:space-between;align-items:center;gap:1rem;margin:1.25rem calc(-1*var(--gut)) 0;padding:.85rem var(--gut);min-height:56px;background:var(--ink-2);border-top:2px solid var(--gold);color:var(--bone);text-decoration:none;font-weight:500}.qb-bar b{font:400 1.6rem/1 var(--didot);font-variant-numeric:tabular-nums}.qb-bar span::after{content:"  \2193";color:var(--turq-l)}}
+@media print{.qb-bar,.qb-act{display:none!important}.qb-sum{position:static!important}}
 #rates,#hohs{scroll-margin-top:96px}
 .hohs{margin-top:clamp(2.5rem,5vw,4rem);padding-top:1.5rem;border-top:1px solid var(--line)}
 .hh-head{display:grid;gap:.7rem}
@@ -1094,7 +1148,59 @@ a.bl-s.go:active{transform:translateY(1px)}
       </div>
     </div>
     <div class="total rv"><span>All three phases</span><b>$99,000</b></div>
+
+    <div class="bb rv">
+      <p class="bb-l"><span>Book all three phases together</span><b>Discount &minus;$2,750</b></p>
+      <p class="bb-t"><span>All three phases, booked together</span><b>$96,250</b></p>
+      <p class="bb-n">A $2,750 discount when the launch and both class phases are booked in one agreement. It comes off the final class installment.</p>
+    </div>
+
     <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait. The learning platform, the mobile app and its network, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
+
+    <div class="qb rv" id="quote">
+      <div class="qb-head">
+        <p class="eyebrow">Build your quote</p>
+        <h3>Choose the phases and add-ons. Your quote adds up as you go.</h3>
+      </div>
+      <div class="qb-grid">
+        <div class="qb-pick">
+          <fieldset><legend class="rc-k">Phases</legend>
+          <label class="qb-tg"><input type="checkbox" data-n="Enterprise Launch" data-p="16500" checked><span class="qb-t"><b>Enterprise Launch</b>The production day and the launch library</span><em>$16,500</em></label>
+          <label class="qb-tg"><input type="checkbox" data-n="Classes 1 to 28" data-p="42000" checked><span class="qb-t"><b>Classes 1 to 28</b>28 classes and 56 promos</span><em>$42,000</em></label>
+          <label class="qb-tg"><input type="checkbox" data-n="Classes 29 to 55" data-p="40500" checked><span class="qb-t"><b>Classes 29 to 55</b>27 classes and 54 promos</span><em>$40,500</em></label>
+          </fieldset>
+          <fieldset><legend class="rc-k">Add-ons</legend>
+          <div class="qb-row" data-n="AI twin" data-ns="AI twins" data-p="1500" data-max="11"><span class="qb-t"><b>AI twins</b>A digital twin of one person, built once<i>$1,500 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: AI twin">&minus;</button><input type="number" inputmode="numeric" min="0" max="11" value="0" aria-label="How many: AI twins"><button type="button" class="qb-p" aria-label="Add one: AI twin">+</button></span></div>
+          <div class="qb-row" data-n="AI twin case-study video" data-ns="AI twin case-study videos" data-p="750" data-max="20"><span class="qb-t"><b>AI twin case-study videos</b>Finished and captioned<i>$750 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: AI twin case-study video">&minus;</button><input type="number" inputmode="numeric" min="0" max="20" value="0" aria-label="How many: AI twin case-study videos"><button type="button" class="qb-p" aria-label="Add one: AI twin case-study video">+</button></span></div>
+          <div class="qb-row" data-n="MML in 60" data-ns="MML in 60 lessons" data-p="200" data-max="55"><span class="qb-t"><b>MML in 60 lessons</b>A 60-second lesson cut from a class<i>$200 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: MML in 60">&minus;</button><input type="number" inputmode="numeric" min="0" max="55" value="0" aria-label="How many: MML in 60 lessons"><button type="button" class="qb-p" aria-label="Add one: MML in 60">+</button></span></div>
+          <div class="qb-row" data-n="MML trailer" data-ns="MML trailer" data-p="750" data-max="1"><span class="qb-t"><b>MML trailer</b>One trailer for the series, cut from the classes<i>$750<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: MML trailer">&minus;</button><input type="number" inputmode="numeric" min="0" max="1" value="0" aria-label="How many: MML trailer"><button type="button" class="qb-p" aria-label="Add one: MML trailer">+</button></span></div>
+          <div class="qb-row" data-n="MML preview clip" data-ns="MML preview clip" data-p="200" data-max="1"><span class="qb-t"><b>MML preview clip</b>A short first look at the series<i>$200<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: MML preview clip">&minus;</button><input type="number" inputmode="numeric" min="0" max="1" value="0" aria-label="How many: MML preview clip"><button type="button" class="qb-p" aria-label="Add one: MML preview clip">+</button></span></div>
+          <div class="qb-row" data-n="Executive film" data-ns="Executive films" data-p="750" data-max="11"><span class="qb-t"><b>Executive films</b>For each C-suite leader, 60 to 90 seconds<i>$750 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: Executive film">&minus;</button><input type="number" inputmode="numeric" min="0" max="11" value="0" aria-label="How many: Executive films"><button type="button" class="qb-p" aria-label="Add one: Executive film">+</button></span></div>
+          <div class="qb-row" data-n="Leadership one-liner" data-ns="Leadership one-liners" data-p="150" data-max="11"><span class="qb-t"><b>Leadership one-liners</b>One short line on camera from each leader<i>$150 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: Leadership one-liner">&minus;</button><input type="number" inputmode="numeric" min="0" max="11" value="0" aria-label="How many: Leadership one-liners"><button type="button" class="qb-p" aria-label="Add one: Leadership one-liner">+</button></span></div>
+          <div class="qb-row" data-n="Guest creator" data-ns="Guest creators" data-p="750" data-max="3"><span class="qb-t"><b>Guest creators</b>A portrait, a sound bite and a 60-second lesson for each guest<i>$750 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: Guest creator">&minus;</button><input type="number" inputmode="numeric" min="0" max="3" value="0" aria-label="How many: Guest creators"><button type="button" class="qb-p" aria-label="Add one: Guest creator">+</button></span></div>
+          <div class="qb-row" data-n="Enterprise B-roll" data-ns="Enterprise B-roll" data-p="1500" data-max="1"><span class="qb-t"><b>Enterprise B-roll</b>Division groups, details and candids, in stills and video<i>$1,500<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: Enterprise B-roll">&minus;</button><input type="number" inputmode="numeric" min="0" max="1" value="0" aria-label="How many: Enterprise B-roll"><button type="button" class="qb-p" aria-label="Add one: Enterprise B-roll">+</button></span></div>
+          <div class="qb-row" data-n="Extra retouched photo" data-ns="Extra retouched photos" data-p="35" data-max="200"><span class="qb-t"><b>Extra retouched photos</b>Beyond one portrait per person<i>$35 each<span class="qb-sub" aria-hidden="true"></span></i></span><span class="qb-st"><button type="button" class="qb-m" aria-disabled="true" aria-label="Remove one: Extra retouched photo">&minus;</button><input type="number" inputmode="numeric" min="0" max="200" value="0" aria-label="How many: Extra retouched photos"><button type="button" class="qb-p" aria-label="Add one: Extra retouched photo">+</button></span></div>
+          </fieldset>
+          <a class="qb-bar" href="#qbSum"><span>Your quote</span><b data-qb-total>$96,250</b></a>
+        </div>
+        <aside class="qb-sum" id="qbSum" aria-label="Your quote">
+          <p class="rc-k">Your quote</p>
+          <ul id="qbLines">
+            <li class="grp">Phases</li>
+            <li><span>Enterprise Launch</span><b>$16,500</b></li>
+            <li><span>Classes 1 to 28</span><b>$42,000</b></li>
+            <li><span>Classes 29 to 55</span><b>$40,500</b></li>
+            <li class="disc"><span>Discount, all three booked together</span><b>&minus;$2,750</b></li>
+          </ul>
+          <p class="qb-total"><span>Total</span><b data-qb-total>$96,250</b></p>
+          <p class="qb-hint" id="qbHint" hidden></p>
+          <p class="qb-note">Hair, makeup and styling are added once the date and headcount are set. Rush delivery, 24 to 48 hours, is +25%. The platform, the app, live webinars, email and print are quoted separately.</p>
+          <div class="qb-act"><a class="btn solid" id="qbSend" href="mailto:taylormademd@gmail.com?subject=ASSET-U%20quote%20from%20the%20proposal">Send this quote to Elliott</a><button class="btn" type="button" id="qbCopy">Copy the quote</button></div>
+          <p class="sr-t" id="qbLive" aria-live="polite"></p>
+        </aside>
+      </div>
+    </div>
+
 
     <details>
       <summary>Included in every phase</summary>
@@ -1107,22 +1213,6 @@ a.bl-s.go:active{transform:translateY(1px)}
         <li><span><b>Look preview in your brand</b>Before the first shoot</span></li>
         <li><span><b>Music cleared for your use</b>Across your channels</span></li>
         <li><span><b>Two revision rounds</b>On each piece. ASSET-&#8288;U signs off all creative</span></li>
-      </ul>
-    </details>
-    <details>
-      <summary>Optional additions, priced per piece</summary>
-      <ul class="adds">
-        <li><span><b>AI twin</b>A digital twin of one person, built once</span><em>$1,500 ea.</em></li>
-        <li><span><b>AI twin case-study video</b>Finished and captioned</span><em>$750 ea.</em></li>
-        <li><span><b>MML in 60</b>A 60-second lesson cut from a class</span><em>$200 ea.</em></li>
-        <li><span><b>MML trailer</b>One trailer for the series, cut from the classes</span><em>$750</em></li>
-        <li><span><b>MML preview clip</b>A short first look at the series</span><em>$200</em></li>
-        <li><span><b>Executive films</b>For each C-suite leader, 60 to 90 seconds</span><em>$750 ea.</em></li>
-        <li><span><b>Leadership one-liners</b>One short line on camera from each leader</span><em>$150 ea.</em></li>
-        <li><span><b>Guest creators</b>A portrait, a sound bite and a 60-second lesson for each guest</span><em>$750 ea.</em></li>
-        <li><span><b>Enterprise B-roll</b>Division groups, details and candids, in stills and video</span><em>$1,500</em></li>
-        <li><span><b>Extra retouched photos</b>Beyond one portrait per person</span><em>$35 ea.</em></li>
-        <li><span><b>Rush delivery</b>24 to 48 hours</span><em>+25%</em></li>
       </ul>
     </details>
     <details>
@@ -1293,7 +1383,7 @@ a.bl-s.go:active{transform:translateY(1px)}
           <li><b>Used for case-study videos</b> and short&#8209;form social</li>
           <li><b>Likeness and AI consent</b> signed by everyone before production begins</li>
         </ul>
-        <p class="next" style="margin-top:1.25rem">AI twins are not part of the three phases. They are priced per person under Optional additions.</p>
+        <p class="next" style="margin-top:1.25rem">AI twins are not part of the three phases. They are priced per person in the quote builder under Investment.</p>
       </div>
       <figure class="twin-vid rv">
         <video id="tv" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/twin-poster.jpg" src="v/ai-twin.mp4"></video><button type="button" class="tplay" data-for="tv" aria-label="Play the second sample"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
@@ -1536,6 +1626,54 @@ a.bl-s.go:active{transform:translateY(1px)}
     function fb(){var r=d.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy';setTimeout(function(){b.textContent=label},2400)}
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,fb);else fb();
   })});
+})();
+</script>
+<script>
+(function(){
+  var d=document,q=d.getElementById('quote');if(!q)return;
+  var DISC=2750,KEY='au-quote-v1',MAIL='taylormademd@gmail.com';
+  var phs=[].slice.call(q.querySelectorAll('.qb-tg input')),rows=[].slice.call(q.querySelectorAll('.qb-row'));
+  var lines=d.getElementById('qbLines'),hint=d.getElementById('qbHint'),live=d.getElementById('qbLive'),send=d.getElementById('qbSend'),copy=d.getElementById('qbCopy'),tots=[].slice.call(q.querySelectorAll('[data-qb-total]'));
+  function money(n){return (n<0?'−$':'$')+Math.abs(n).toLocaleString('en-US')}
+  function inp(r){return r.querySelector('input')}
+  function clamp(r,v){var mx=+r.getAttribute('data-max');v=Math.floor(Number(v));if(!isFinite(v)||v<0)v=0;return Math.min(mx,v)}
+  try{var st=JSON.parse(localStorage.getItem(KEY)||'null');if(st&&st.p&&st.a){phs.forEach(function(p,i){if(typeof st.p[i]==='boolean')p.checked=st.p[i]});rows.forEach(function(r,i){inp(r).value=clamp(r,st.a[i])})}}catch(e){}
+  var text='',liveT=0;
+  function li(cls,label,val){var l=d.createElement('li');if(cls)l.className=cls;var a=d.createElement('span');a.textContent=label;l.appendChild(a);if(val!=null){var b=d.createElement('b');b.textContent=val;l.appendChild(b)}return l}
+  function render(save){
+    var txt=[],total=0,any=false,on=phs.filter(function(p){return p.checked});
+    lines.textContent='';
+    if(on.length){lines.appendChild(li('grp','Phases'));
+      on.forEach(function(p){var v=+p.getAttribute('data-p'),n=p.getAttribute('data-n');total+=v;lines.appendChild(li('',n,money(v)));txt.push(n+': '+money(v))});
+      if(on.length===phs.length){total-=DISC;lines.appendChild(li('disc','Discount, all three booked together',money(-DISC)));txt.push('Discount, all three phases booked together: '+money(-DISC))}}
+    rows.forEach(function(r){var i=inp(r),n=clamp(r,i.value),p=+r.getAttribute('data-p'),mx=+r.getAttribute('data-max');
+      if(d.activeElement!==i&&String(n)!==i.value)i.value=n;
+      r.classList.toggle('on',n>0);r.querySelector('.qb-m').setAttribute('aria-disabled',n<=0?'true':'false');r.querySelector('.qb-p').setAttribute('aria-disabled',n>=mx?'true':'false');
+      r.querySelector('.qb-sub').textContent=n>0?(mx>1?'  ·  '+n+' = '+money(n*p):'  ·  added'):'';
+      if(n>0){if(!any){lines.appendChild(li('grp','Add-ons'));any=true}
+        var lab=mx>1?n+' × '+(n===1?r.getAttribute('data-n'):r.getAttribute('data-ns')):r.getAttribute('data-n');
+        total+=n*p;lines.appendChild(li('',lab,money(n*p)));txt.push(lab+': '+money(n*p))}});
+    if(!on.length&&!any)lines.appendChild(li('none','Choose a phase or an add-on to start.'));
+    tots.forEach(function(t){t.textContent=money(total)});
+    if(on.length&&on.length<phs.length){hint.hidden=false;hint.textContent='Book all three phases together and take '+money(DISC)+' off.'}else hint.hidden=true;
+    txt.push('','Total: '+money(total),'','Hair, makeup and styling are added once the date and headcount are set.');
+    text='ASSET-U quote, built on the Taylormade Creative proposal\n\n'+txt.join('\n');
+    send.href='mailto:'+MAIL+'?subject='+encodeURIComponent('ASSET-U quote from the proposal')+'&body='+encodeURIComponent('Hi Elliott,\n\nHere is the quote we built on the proposal:\n\n'+txt.join('\n')+'\n');
+    clearTimeout(liveT);liveT=setTimeout(function(){live.textContent='Quote total '+money(total)},500);
+    if(save){try{localStorage.setItem(KEY,JSON.stringify({p:phs.map(function(p){return p.checked}),a:rows.map(function(r){return clamp(r,inp(r).value)})}))}catch(e){}}
+  }
+  phs.forEach(function(p){p.addEventListener('change',function(){render(true)})});
+  rows.forEach(function(r){var i=inp(r),step=function(k){var n=clamp(r,i.value),m=+r.getAttribute('data-max');if((k<0&&n<=0)||(k>0&&n>=m))return;i.value=clamp(r,n+k);render(true)};
+    r.querySelector('.qb-m').addEventListener('click',function(){step(-1)});
+    r.querySelector('.qb-p').addEventListener('click',function(){step(1)});
+    i.addEventListener('input',function(){if(i.value!=='')render(true)});
+    i.addEventListener('change',function(){i.value=clamp(r,i.value);render(true)});
+    i.addEventListener('focus',function(){i.select()});
+  });
+  copy.addEventListener('click',function(){var lab='Copy the quote',done=function(){copy.textContent='Copied';setTimeout(function(){copy.textContent=lab},1600)};
+    function fb(){var t=d.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';d.body.appendChild(t);t.select();try{d.execCommand('copy');done()}catch(e){}t.remove()}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(done,fb);else fb()});
+  render(false);
 })();
 </script>
 <script>addEventListener('load',function(){if(location.hash&&location.hash.length>1){var e=document.querySelector(location.hash);if(e)setTimeout(function(){e.scrollIntoView()},700)}})</script>

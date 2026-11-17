@@ -1011,6 +1011,24 @@ a.bl-s.go:active{transform:translateY(1px)}
 .film-work a{color:var(--bone);font-weight:500;text-decoration:none;border-bottom:1.5px solid var(--gold);padding-bottom:2px;white-space:nowrap;transition:color .2s,border-color .2s}
 .film-work a svg{fill:none;stroke:currentColor;stroke-width:2;vertical-align:-1px;margin-left:.15em;transition:transform .3s var(--ease)}
 @media (hover:hover){.film-work a:hover{color:var(--turq-l);border-color:var(--turq-l)}.film-work a:hover svg{transform:translateX(3px)}}
+
+/* past work under the films */
+.pw-wrap{margin-top:clamp(3.5rem,7vw,6rem);padding-top:1.5rem;border-top:1px solid var(--line-d)}
+.pw-h{display:grid;gap:.6rem 4rem;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.pw-h h3{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem)}
+.pw-h p:not(.eyebrow){color:var(--mute-d);max-width:48ch}
+@media (min-width:900px){.pw-h{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:end}.pw-h .eyebrow{grid-column:1/-1}}
+.pw-row{display:grid;gap:2rem 1.5rem}
+@media (min-width:760px){.pw-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pw{margin:0}
+.pw video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink-2);border:1px solid var(--line-d)}
+.pw figcaption{display:grid;gap:.3rem;margin-top:.8rem;font-size:.9375rem;color:var(--mute-d)}
+.pw figcaption b{display:flex;justify-content:space-between;gap:1rem;color:var(--bone);font-weight:500}
+.pw figcaption b span{color:var(--turq-l);font:600 .75rem/1.6 var(--sans);letter-spacing:.1em}
+.pw-wrap .film-work{margin-top:clamp(1.75rem,3.5vw,2.5rem)}
+
+.hb{margin-top:clamp(2.5rem,5vw,4rem);display:grid;gap:1rem;max-width:62rem}
+.hb-p{font:400 clamp(1.25rem,1.05rem + .8vw,1.75rem)/1.45 var(--didot);color:var(--bone);padding-left:clamp(1rem,2vw,1.5rem);border-left:2px solid var(--gold)}
 </style>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('go')},3200)</script>
 </head>
@@ -1074,16 +1092,32 @@ a.bl-s.go:active{transform:translateY(1px)}
     <div class="film-gap" aria-hidden="true"></div>
     <figure class="twin-wide film-a film-b grow rv">
       <div class="tstage">
-        <video id="fv2" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/f-poster2.jpg" src="v/film-the-formula.mp4"></video><button type="button" class="tplay" data-for="fv2" aria-label="Play the second concept film, 1 minute 8 seconds"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><em>Play film 02 &middot; 1:08</em></button>
+        <video id="fv2" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/f-poster2.jpg" src="v/film-the-formula.mp4"></video><button type="button" class="tplay" data-for="fv2" aria-label="Play Her Billion, the second concept film, 1 minute 8 seconds"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><em>Play Her Billion &middot; 1:08</em></button>
       </div>
-      <figcaption><b>Concept film 02 &middot; Who owns the formula?</b><span>A founder keeps what she made, through all four divisions. Sound on.</span></figcaption>
+      <figcaption><b>Concept film 02 &middot; <!-- HER-BILLION -->Her Billion<!-- /HER-BILLION --></b><span>Sound on. Captions are on screen.</span></figcaption>
     </figure>
-      <dl class="film-dl film-dl3 rv">
+      <div class="hb rv">
+      <p class="eyebrow"><!-- HER-BILLION -->Her Billion<!-- /HER-BILLION --> &middot; The Asset Is You &middot; In thirty seconds</p>
+      <p class="hb-p">A founder is about to sign a deal for her first thousand bottles. One line gives the buyer her formula. A woman in Education and Community has her read it out loud. The Brand House helps her send different terms: they can buy the bottles, and she keeps what she made. Studios puts her story on camera, even the part where she almost signed, so the next founder sees it. Then Ventures asks what a stake in her company would pay for. &ldquo;Our first thousand bottles.&rdquo;</p>
+    </div>
+    <dl class="film-dl film-dl3 rv">
         <div><dt>Who is watching</dt><dd>The woman who carries her whole house and was never shown how to own any of it.</dd></div>
         <div><dt>What she does next</dt><dd>Walks through the open door: one class, then the community, then a stake.</dd></div>
         <div><dt>How we work</dt><dd>We make the concept film before any shoot day, so you see the story first. Then we film it for real.</dd></div>
       </dl>
-    <p class="film-work rv">These two are concept films. For finished work, from long-form films to micro-lessons and learning platforms, <a href="work/">see our work samples <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+    <div class="pw-wrap">
+      <div class="pw-h rv">
+        <p class="eyebrow">Past work &middot; Closest to your classes</p>
+        <h3>Lessons we have already made.</h3>
+        <p>You asked for a past project that shows the vision. The two films above are concepts. These are finished client lessons, the nearest thing we have made to your Micro Masterclass Learning&trade; series.</p>
+      </div>
+      <div class="pw-row">
+        <figure class="pw rv"><video controls playsinline preload="none" controlslist="nodownload" poster="work/p/iasms-frontalis.jpg" src="work/v/iasms-frontalis.mp4"></video><figcaption><b>It&rsquo;s A Secret Academy<span>1:39</span></b><span>An injector-training lesson with motion graphics, one of a four-lesson series.</span></figcaption></figure>
+        <figure class="pw rv"><video controls playsinline preload="none" controlslist="nodownload" poster="work/p/measure-lesson-1.jpg" src="work/v/measure-lesson-1.mp4"></video><figcaption><b>MEASURE &middot; Micro-lesson 1<span>0:33</span></b><span>One idea in about thirty seconds, from a short lesson series.</span></figcaption></figure>
+        <figure class="pw rv"><video controls playsinline preload="none" controlslist="nodownload" poster="work/p/measure-lesson-2.jpg" src="work/v/measure-lesson-2.mp4"></video><figcaption><b>MEASURE &middot; Micro-lesson 2<span>0:38</span></b><span>The second lesson in the same series, in the same look.</span></figcaption></figure>
+      </div>
+      <p class="film-work rv">More finished work, from long-form films to learning platforms: <a href="work/">see all our work samples <svg viewBox="0 0 16 16" aria-hidden="true" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+    </div>
   </div>
 </section>
 
@@ -2012,6 +2046,9 @@ a.bl-s.go:active{transform:translateY(1px)}
 })();
 </script>
 
+<script>
+(function(){var vs=[].slice.call(document.querySelectorAll('#films video'));vs.forEach(function(v){v.addEventListener('play',function(){vs.forEach(function(o){if(o!==v&&!o.paused)o.pause()})})})})();
+</script>
 <script>
 (function(){
   var g=document.querySelector('.grow .tstage'); if(!g)return;

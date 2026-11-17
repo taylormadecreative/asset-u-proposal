@@ -633,6 +633,7 @@ details[open] summary::after{content:"Hide"}
 @media (min-width:900px){.promos{align-items:start}}
 #prpp{min-width:11.25rem;justify-content:center}
 .pf[data-len="15"] .ph>img{transform-origin:27% 44%}
+.pf .ph>img{object-position:15% 50%;transform-origin:24% 40%}
 .twin-wide .tstage:has(:focus-visible)::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 0 4px rgba(36,31,33,.9)}
 .dev figcaption{font-size:.8125rem}
 @media (min-width:900px) and (max-width:1099px){.duo h3{font-size:calc(3.7vw - 2px)}}
@@ -682,7 +683,6 @@ h3,.ov .big{text-wrap:balance}main li,main dd,main figcaption{text-wrap:pretty}.
 @media (min-width:900px){.does li.lead{display:grid;grid-template-columns:subgrid;align-items:baseline}.does li.lead b{margin:0}.does li.lead span{max-width:none}}
 @media (min-width:900px){.devs{grid-template-rows:auto auto auto;row-gap:0}.devs .dev{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}.devs .dev>:first-child{align-self:end}}
 @media (min-width:900px) and (max-width:1099px){.dev:not(.dk) figcaption{text-wrap:pretty}}
-@media (min-width:980px){#studio .pick{grid-template-columns:40% minmax(0,1fr)}}
 .more dt{letter-spacing:.16em;font-weight:600}
 @media (min-width:701px){.room figcaption{letter-spacing:.16em;font-weight:600}}
 .devnote{position:relative;z-index:3}
@@ -827,21 +827,199 @@ a.bl-s.go:active{transform:translateY(1px)}
 #fs:not(.on){pointer-events:none}
 @media print{.bars,.glow,.mq,.hero .cue,.fs,.fcap{display:none!important}.bar{position:static!important}.rv,.wi,.w,.hero .in>*,.steps li{opacity:1!important;transform:none!important;animation:none!important}.rv .stage,.rv>.player,.rv .pstage,.rv .tstage,.rv .pf .ph,.rv .fr,.rv #mBd,.hero .hf img{clip-path:none!important}.run{height:auto!important}.run .pin{position:relative!important;top:auto!important;height:auto!important;min-height:0!important}.room .dim{display:none!important}.hh-cls::before,.hh-rng i{transform:none!important}.hh-cls>span,.hh-pt,.hh-rng{opacity:1!important}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;transition-delay:0s!important}}
+
+/* ================= 11/17 refine: the women and the story first ================= */
+/* nav: never wraps, the logo never squeezes */
+.bar .in>a{flex:none}
+.bar nav a{white-space:nowrap}
+@media (max-width:1219px){.bar nav{gap:0}.bar nav a{padding-inline:.6rem}}
+@media (max-width:1079px){.bar nav a{padding-inline:.5rem;font-size:.8125rem}.bar nav a.lo{display:none}}
+@media (max-width:899px){.bar nav a:not(.keep){display:none}}
+#story,#women,#ask{scroll-margin-top:0}
+.sb,#sbFilm,.cw-band{scroll-margin-top:96px}
+
+/* cover: the collection, words beside it, never on a face */
+.hero::after{display:none}
+.hero .hf{background:#B9B3AE}
+.hero .hf img{object-position:0 18%}
+.hero .hf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16%;z-index:3;background:linear-gradient(180deg,rgba(36,31,33,0),var(--ink));pointer-events:none}
+.fcap{background:rgba(36,31,33,.78);padding:.5em .7em;text-shadow:none;color:var(--bone)}
+.hero h1{max-width:10ch}
+.hero .lede{max-width:34ch}
+.hgo{margin-top:1.75rem;color:var(--bone)}
+.hgo svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .25s var(--ease)}
+@media (hover:hover){.hgo:hover svg{transform:translateY(3px)}}
+@media (prefers-reduced-motion:no-preference){.js:not(.go) .hero .hgo{opacity:0}.js.go .hero .hgo{animation:m-fade 1s var(--ease) 1.85s both}}
+@media (min-width:1024px){
+  .hero{min-height:min(92vh,900px)}
+  .hero .hf{inset:65px 0 0 48%}
+  .hero .hf::after{display:none}
+  .hero .in{padding-top:clamp(5rem,8vw,7.5rem)}
+  .hero .in{--tx:calc(48vw - max(var(--gut),(100vw - 1240px)/2) - 3.5rem)}
+  .hero .in>*{max-width:var(--tx)}
+  .hero .slate{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+}
+@media (min-width:1024px) and (max-width:1279px){.hero .hf{left:42%}.hero .in{--tx:calc(42vw - var(--gut) - 3rem)}}
+@media (max-width:1023px){
+  .hero{min-height:0;--ph:min(112vw,64svh)}
+  .hero .hf{inset:65px 0 auto 0;height:var(--ph)}
+  .hero .hf img{object-position:0 12%}
+  .fcap{top:calc(65px + var(--ph) - 2.6rem);z-index:4}
+  .hero .in{padding-top:calc(var(--ph) + 1.5rem);padding-bottom:2.5rem}
+  .hero h1{margin-top:.75rem}
+  .hero .eyebrow{color:var(--turq-l);text-shadow:none}
+}
+@media (max-width:560px){.hgo{width:100%;justify-content:center;min-height:52px}}
+
+/* the story: one creator, four divisions, Studios as the thread */
+.story .head{margin-bottom:clamp(2rem,5vw,3.5rem)}
+.story{--tw:clamp(34px,5vw,72px)}
+.sb-wrap{display:grid;grid-template-columns:var(--tw) minmax(0,1fr)}
+.sb-rail{position:relative;grid-column:1}
+.sb-rail::before,.sb-line{content:"";position:absolute;left:9px;top:0;bottom:0;width:2px}
+.sb-rail::before{background:rgba(36,31,33,.14)}
+.sb-line{background:var(--turq);transform-origin:top}
+.sb-tag{position:relative;top:1.75rem;display:block;width:12px;margin-left:4px;padding:.7rem 0;background:var(--beige);writing-mode:vertical-rl;transform:rotate(180deg);font:600 .6875rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--turq-t);white-space:nowrap}
+.sb-list{grid-column:2;min-width:0}
+.sb{position:relative;display:grid;gap:1.25rem 3.5rem;padding:clamp(1.75rem,4vw,3.25rem) 0 clamp(2.25rem,5vw,4rem);border-top:1px solid var(--line)}
+.sb-node{position:absolute;left:calc(-1*var(--tw) + 3px);top:-7px;width:14px;height:14px;border-radius:50%;background:var(--turq);box-shadow:0 0 0 4px var(--beige);transition:background-color .4s var(--ease),transform .4s var(--ease)}
+.sb.st .sb-node{left:calc(-1*var(--tw) - 1px);top:-11px;width:22px;height:22px;box-shadow:0 0 0 4px var(--beige),0 0 0 5.5px var(--turq)}
+.sb-pic{position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--ink-2);margin:0}
+.sb-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sb-k{display:flex;align-items:baseline;gap:.7rem;font:600 .75rem/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--turq-t)}
+.sb-n{font:400 1.25rem/1 var(--didot);letter-spacing:0;color:var(--ink)}
+.sb h3{margin:.6rem 0 .75rem;font-size:clamp(1.65rem,1.2rem + 1.6vw,2.6rem);line-height:1.05}
+.sb-p{color:var(--mute);max-width:44ch}
+.sb-dl{display:grid;gap:.85rem;margin-top:1.4rem;padding-top:1.1rem;border-top:1px solid var(--line)}
+.sb-dl dt{font:600 .6875rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--turq-t)}
+.sb-dl dd{font-size:.9375rem;line-height:1.5;margin-top:.2rem}
+.sb.st .sb-k{color:var(--ink)}
+@media (min-width:900px){.sb{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:center}.sb:nth-child(even) .sb-pic{order:2}}
+@media (min-width:560px) and (max-width:899px){.sb-dl{grid-template-columns:1fr 1fr;column-gap:1.5rem}}
+.sf{margin:clamp(1rem,3vw,2rem) 0 0 var(--tw)}
+.sf-frame{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--ink);color:var(--bone);container-type:inline-size}
+.sf-frame>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:brightness(.62)}
+.sf-frame::before,.sf-frame::after{content:"";position:absolute;left:0;right:0;height:9%;background:#1a1617;z-index:1}
+.sf-frame::before{top:0}.sf-frame::after{bottom:0}
+.sf-chip{position:absolute;z-index:2;top:12%;font:600 max(11px,1.1cqw)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;background:rgba(36,31,33,.78);padding:.55em .75em}
+.sf-chip.l{left:3.5cqw;font-variant-numeric:tabular-nums}.sf-chip.r{right:3.5cqw;color:var(--turq-l)}
+.sf-tx{position:absolute;z-index:2;left:3.5cqw;right:3.5cqw;bottom:13%;display:grid;gap:.6rem;max-width:30em}
+.sf-k{font:600 max(11px,1.15cqw)/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--turq-l)}
+.sf-t{font:400 max(26px,4.6cqw)/1.02 var(--didot);word-spacing:-.08em;max-width:12em;text-wrap:balance}
+.sf figcaption{margin-top:.9rem;font-size:.9375rem;color:var(--mute);max-width:62ch}
+@container (max-width:520px){.sf-tx{bottom:12%}.sf-chip{top:13%}}
+.sb-end{display:grid;gap:1.5rem 4rem;margin:clamp(3rem,6vw,4.5rem) 0 0 var(--tw);padding-top:1.75rem;border-top:2px solid var(--turq)}
+@media (min-width:900px){.sb-end{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:end}.sb-end .btn{justify-self:start}}
+.sb-end p{color:var(--ink)}
+@media (max-width:420px){.story{--tw:26px}.sb-rail::before,.sb-line{left:6px}.sb-tag{margin-left:1px}.sb-node{left:calc(-1*var(--tw) + 0px)}.sb.st .sb-node{left:calc(-1*var(--tw) - 4px)}}
+@media (prefers-reduced-motion:no-preference){
+  .js .sb-line{transform:scaleY(var(--t,0))}
+  .js .sb:not(.act) .sb-node{background:var(--beige);box-shadow:0 0 0 4px var(--beige),inset 0 0 0 2px rgba(36,31,33,.3);transform:scale(.8)}
+  .js .sb .sb-tx{transition:opacity .6s var(--ease)}
+  .js .sb:not(.act) .sb-tx{opacity:.42}
+}
+
+/* the women: every division, every shade, the founder first */
+.cw-lead{display:grid;gap:1.5rem 4rem;align-items:end}
+@media (min-width:900px){.cw-lead{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+.cw{margin:0;min-width:0}
+.cw-ph{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--ink-2)}
+.cw-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cw-ph::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line-d);pointer-events:none}
+.cw figcaption{display:grid;gap:.3rem;margin-top:.95rem}
+.cw-t{font:600 .6875rem/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--turq-l)}
+.cw b{font:400 clamp(1.25rem,1.1rem + .5vw,1.55rem)/1.15 var(--didot);word-spacing:-.08em;color:var(--bone)}
+.cw-l{font-size:.9375rem;line-height:1.5;color:var(--mute-d);max-width:34ch}
+.cw-lead .cw-tx h3{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem);margin:.6rem 0 .9rem}
+.cw-lead .cw-tx p:not(.cw-t){color:var(--mute-d);max-width:44ch}
+.cw-band{margin-top:clamp(3.5rem,7vw,6rem);padding-top:1.5rem;border-top:1px solid var(--line-d)}
+.cw-h{display:grid;gap:.5rem 4rem;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.cw-h h3{font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem)}
+.cw-h p{color:var(--mute-d);max-width:44ch}
+@media (min-width:900px){.cw-h{grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:baseline}}
+.cw-row{display:grid;gap:2.25rem 1rem;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.cw-edu .cw:first-child{grid-column:1/-1}
+.cw-bh{padding-top:1.25rem;border-top:2px solid var(--bone)}
+.cw-ven{display:grid;gap:1.5rem 4rem;align-items:end}
+.cw-vt .cw-b{display:block;margin-top:.3rem;font:400 clamp(1.5rem,1.2rem + .9vw,2rem)/1.15 var(--didot);word-spacing:-.08em;color:var(--bone)}
+.cw-vt .cw-l{margin-top:.4rem}
+.cw-ven .cw{max-width:420px}
+.cw-men{margin-top:1.25rem;color:var(--mute-d);font-size:.9375rem;max-width:44ch}
+@media (min-width:700px){.cw-row{gap:2.5rem 1.5rem}.cw-edu{grid-template-columns:minmax(0,4fr) minmax(0,3fr) minmax(0,3fr);align-items:end}.cw-edu .cw:first-child{grid-column:auto}.cw-bh{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:900px){.cw-ven{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.cw-ven .cw{max-width:none}.cw-ven .cw{grid-column:2;grid-row:1}.cw-ven .cw-vt{grid-column:1;grid-row:1}}
+@media (max-width:359px){.cw-row{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){
+  .js .rv .sb-pic,.js .rv .cw-ph,.js .rv.sf .sf-frame{clip-path:inset(0 0 100% 0);transition:clip-path 1.3s cubic-bezier(.76,0,.24,1);transition-delay:calc(.12s + var(--i,0)*90ms)}
+  .js .rv.on .sb-pic,.js .rv.on .cw-ph,.js .rv.on.sf .sf-frame{clip-path:inset(0)}
+}
+/* print without the new studio frames */
+.pm0 .srv{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,1fr) 27%;align-items:end;gap:7%;padding:7% 9% 9%}
+.pm0 .sr-wall{height:100%;align-self:stretch}
+.pm0 .bnr{width:100%}
+@media print{.rv .sb-pic,.rv .cw-ph,.sf .sf-frame{clip-path:none!important}.sb-tx{opacity:1!important}.sb-line{transform:none!important}}
+
+/* films, near the top */
+.films{padding-top:clamp(3.5rem,8vw,6.5rem)}
+.films .head h2{max-width:14ch}
+.film-a{margin:0}
+.film-a .tstage{box-shadow:0 50px 90px -50px rgba(0,0,0,.8)}
+.film-a .tstage::before{content:"";position:absolute;left:0;top:0;height:2px;width:100%;background:var(--gold);z-index:2;transform:scaleX(0);transform-origin:left;transition:transform 1.4s var(--ease) .25s}
+.film-a.on .tstage::before,.no-js .film-a .tstage::before{transform:none}
+.film-row{display:grid;gap:clamp(1.75rem,4vw,3.5rem);margin-top:clamp(2.25rem,5vw,4rem)}
+@media (min-width:900px){.film-row{grid-template-columns:minmax(0,7fr) minmax(0,5fr);align-items:start}}
+.film-b{margin:0}
+.film-b .tplay span{width:clamp(48px,4.6vw,64px);height:clamp(48px,4.6vw,64px)}
+.twin-wide.film-b figcaption{display:grid;gap:.25rem;justify-content:start}
+.fb-frame{position:relative;aspect-ratio:1800/804;overflow:hidden;background:var(--ink-2);border:1px solid var(--line-d)}
+.fb-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.82)}
+.fb-chip{position:absolute;left:clamp(.7rem,1.6vw,1.1rem);bottom:clamp(.7rem,1.6vw,1.1rem);font:600 .6875rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--bone);background:rgba(36,31,33,.78);padding:.6em .8em;border-left:2px solid var(--gold)}
+.film-b figcaption{display:grid;gap:.25rem;font-size:.875rem;color:var(--mute-d);margin-top:.8rem}
+.film-b figcaption b{color:var(--bone);font-weight:500}
+.film-dl{margin:0;display:grid;gap:0}
+.film-dl>div{padding:1rem 0;border-top:1px solid var(--line-d)}
+.film-dl>div:last-child{border-bottom:1px solid var(--line-d)}
+.film-dl dt{font:600 .6875rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--turq-l);margin-bottom:.4rem}
+.film-dl dd{margin:0;color:var(--bone);font-size:1rem;line-height:1.5}
+#films{scroll-margin-top:72px}
+@media (prefers-reduced-motion:reduce){.film-a .tstage::before{transform:none;transition:none}}
+
+/* one story for every brand */
+.brands{background:var(--bone)}
+.bs-grid{display:grid;gap:clamp(3rem,6vw,4.5rem) clamp(2rem,4vw,3.5rem)}
+@media (min-width:900px){.bs-grid{grid-template-columns:1fr 1fr}}
+.bs{display:grid;align-content:start;gap:.7rem;transition-delay:calc(var(--i,0)*120ms)}
+.bs-pic{margin:0 0 .6rem;aspect-ratio:16/9;overflow:hidden;background:var(--ink-2);position:relative}
+.bs-pic::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease) .35s}
+.bs.on .bs-pic::after{transform:none}
+.bs-pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.6s var(--ease)}
+@media (hover:hover){.bs:hover .bs-pic img{transform:scale(1.03)}}
+.bs-k{font:600 .75rem/1.2 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--turq-t);margin:0}
+.bs h3{margin:0;font-size:clamp(1.7rem,1.4rem + 1vw,2.3rem)}
+.bs-idea{margin:0;font-size:1.0625rem;color:var(--ink)}
+.bs-film{margin:0;color:var(--mute);font-size:.9875rem}
+.bs-film b{color:var(--ink);font-weight:600}
+.bs-line{margin:.3rem 0 .2rem;padding-left:1rem;border-left:2px solid var(--gold);font:400 clamp(1.2rem,1.05rem + .5vw,1.45rem)/1.3 var(--didot);color:var(--ink)}
+.bs-note{margin-top:clamp(2.5rem,5vw,3.5rem);font-size:.8125rem;color:var(--mute);max-width:70ch}
+#brands{scroll-margin-top:72px}
+@media (prefers-reduced-motion:reduce){.bs-pic::after{transform:none;transition:none}.bs-pic img{transition:none}}
 </style>
 <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('go')},3200)</script>
 </head>
 <body>
-<div class="bars" aria-hidden="true"><i></i><i></i><div class="card"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><span></span><small>Production proposal</small></div></div>
+<div class="bars" aria-hidden="true"><i></i><i></i><div class="card"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><span></span><small>The refined proposal</small></div></div>
 <header class="bar wrap">
   <div class="in">
     <a href="#top" aria-label="ASSET-U, back to top"><img src="img/asset-u-logo.png" alt="ASSET-U Enterprise Holdings" width="720" height="236"></a>
     <nav aria-label="Proposal sections">
-      <a href="#studio">Studio</a>
+      <a href="#films">Films</a>
+      <a href="#story">Story</a>
+      <a href="#brands">Brands</a>
+      <a href="#women">Women</a>
       <a href="#launch">Launch</a>
       <a href="#run">Classes</a>
-      <a href="#plan">Plan</a>
+      <a href="#plan" class="lo">Plan</a>
       <a href="#invest" class="keep">Investment</a>
-      <a href="#brief">Your brief</a>
+      <a href="#brief" class="lo">Your brief</a>
       <a href="#house">Platform</a>
       <a href="#twin">AI twins</a>
       <a href="#contact" class="keep">Contact</a>
@@ -852,31 +1030,235 @@ a.bl-s.go:active{transform:translateY(1px)}
 
 <main id="top">
 <section class="hero dark wrap" aria-label="Cover">
-  <div class="hf"><img class="on first" src="img/hero.jpg" alt="Concept frame: a founder speaking on camera on a charcoal backdrop in the studio, the downtown window behind her." width="1600" height="1067" fetchpriority="high"><img src="img/lms1.jpg" alt="" width="1400" height="933" decoding="async" style="object-position:70% 30%"><img src="img/lms5.jpg" alt="" width="1400" height="933" decoding="async" style="object-position:70% 30%"></div>
-  <p class="fcap" id="fcap" aria-hidden="true">Concept frame &middot; The founder film</p>
+  <div class="hf"><img class="on first" src="img/c-collection.jpg" alt="Concept frame: six women in ivory, standing and seated together with hands on each other&rsquo;s shoulders, looking into the lens." width="1046" height="1200" fetchpriority="high"></div>
+  <p class="fcap" id="fcap" aria-hidden="true">Concept frame &middot; The collection</p>
   <div class="in">
-    <p class="eyebrow">Production proposal</p>
-    <h1>From launch day to class fifty-five.</h1>
-    <p class="lede">How Taylormade Creative will produce the <span class="nb">ASSET-&#8288;U</span> Enterprise Launch and all 55 Micro Masterclass Learning&trade; classes: one studio, one cinematic look, one partner.</p>
+    <p class="eyebrow">For every woman</p>
+    <h1>The asset <span class="nb">is you.</span></h1>
+    <p class="lede">An economic engine for women and the men who support them, across wealth, wellness, sports and culture. One woman&rsquo;s story runs through all four divisions, and it starts with a film.</p>
+    <a class="btn hgo jump" href="#films">Watch the film <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a>
     <dl class="slate">
       <div><dt>Prepared for</dt><dd>Danyel, <span class="nb">Bryanna Sims,</span> <span class="nb">Jocelyn McKissick,</span> <span class="nb">Vonna Matthews,</span> <span class="nb">Elle Manuel</span></dd></div>
       <div><dt>From</dt><dd>Elliott Taylor, Taylormade Creative</dd></div>
       <div><dt>Where</dt><dd>Our downtown Dallas studio</dd></div>
-      <div><dt>Date</dt><dd>November 11, 2026</dd></div>
-      <div><dt>Images</dt><dd>Concept frames made for this proposal, set in our studio</dd></div>
+      <div><dt>Refined</dt><dd>After our call, <span class="nb">November 17, 2026</span></dd></div>
+      <div><dt>Images</dt><dd>Concept frames made for this proposal</dd></div>
     </dl>
   </div>
-  <div class="cue" aria-hidden="true"><span>Scroll</span><i></i></div>
 </section>
 
 <div class="mq dark" aria-hidden="true"><div class="mq-t" id="mq"></div></div>
+
+<section class="dark wrap films" id="films">
+  <div class="in">
+    <div class="head split rv">
+      <p class="eyebrow">The films &middot; Made for this proposal</p>
+      <h2>Four divisions. One table.</h2>
+      <p class="lede">You asked how we would be your partner through storytelling across every division. Here is the answer as a film: one woman, four divisions, and the door she holds open for the next woman.</p>
+    </div>
+    <figure class="twin-wide film-a rv">
+      <div class="tstage">
+        <video id="fv1" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/f-poster.jpg" src="v/film-four-divisions.mp4"></video><button type="button" class="tplay" data-for="fv1" aria-label="Play the concept film, 47 seconds"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><em>Play the film &middot; 0:47</em></button>
+      </div>
+      <figcaption><b>Concept film 01 &middot; She holds the door.</b><span>Sound on. Captions are on screen.</span></figcaption>
+    </figure>
+    <div class="film-row">
+      <figure class="twin-wide film-b rv">
+        <div class="tstage">
+          <video id="fv2" playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" poster="img/f-poster2.jpg" src="v/film-the-formula.mp4"></video><button type="button" class="tplay" data-for="fv2" aria-label="Play the second concept film, 1 minute 8 seconds"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><em>Play &middot; 1:08</em></button>
+        </div>
+        <figcaption><b>Concept film 02 &middot; Who owns the formula?</b><span>A founder is offered a deal for what she made. She takes it through all four divisions and keeps it. Sound on.</span></figcaption>
+      </figure>
+      <dl class="film-dl rv">
+        <div><dt>Who is watching</dt><dd>The woman who carries her whole house and was never shown how to own any of it.</dd></div>
+        <div><dt>What she does next</dt><dd>Walks through the open door: one class, then the community, then a stake.</dd></div>
+        <div><dt>How we work</dt><dd>We make the concept film before any shoot day, so you see the story first. Then we film it for real.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="wrap story" id="story" style="background:var(--beige)">
+  <div class="in">
+    <div class="head split rv">
+      <p class="eyebrow">Studios &middot; One story across your four divisions</p>
+      <h2>Nobody ever showed her how to own any of it.</h2>
+      <p class="lede">The film, beat by beat. A woman who carries her whole house walks through one open door and into all four divisions. Then she holds the door for the next woman. That is &ldquo;The asset is you.&rdquo;</p>
+    </div>
+    <div class="sb-wrap" id="sbWrap">
+      <div class="sb-rail" aria-hidden="true"><span class="sb-line"></span><span class="sb-tag">Studios tells every beat</span></div>
+      <ol class="sb-list" aria-label="The story in six beats">
+        <li class="sb rv" id="sb1">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-kitchen.jpg" alt="Film frame: a woman alone at her kitchen table late at night, a bill in her hand, a child&rsquo;s drawing on the refrigerator behind her." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">01</span>The kitchen table</p>
+            <h3>She carries the whole house.</h3>
+            <p class="sb-p">Late at night, the bills in front of her and a child&rsquo;s drawing on the refrigerator. She provides for everyone and owns none of it. Then one woman opens a door.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Every woman who provides for a household and was never shown how ownership works.</dd></div><div><dt>What they do next</dt><dd>See herself in the first five seconds, and keep watching.</dd></div></dl>
+          </div>
+        </li>
+        <li class="sb rv" id="sb2">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-class.jpg" alt="Film frame: the woman listens and writes in a notebook while her teacher, seen from behind, makes a point." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">02</span>Education and Community</p>
+            <h3>She builds, with women who have done it.</h3>
+            <p class="sb-p">One Micro Masterclass Learning&trade; class: one expert, one skill, one action. The system stops being a secret, and a community of owners is there for her next question.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Women who were never shown how ownership works.</dd></div><div><dt>What they do next</dt><dd>Take the class, then join the community.</dd></div></dl>
+          </div>
+        </li>
+        <li class="sb rv" id="sb3">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-brand.jpg" alt="Film frame: three women at a long table with product boxes; one slides a folder across to the woman." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">03</span>Brand House</p>
+            <h3>She owns a stake, not a fee.</h3>
+            <p class="sb-p">At the Brand House table the offer is a stake in what she helps build, beside the women behind the products and the athletes they represent.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Creators, athletes and makers deciding who to build with.</dd></div><div><dt>What they do next</dt><dd>Bring their next deal to the Brand House.</dd></div></dl>
+          </div>
+        </li>
+        <li class="sb st rv" id="sb4">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-studios.jpg" alt="Film frame: the woman sits on a stool in front of a tan backdrop, a cinema camera and a monitor in the foreground, her director counting her in." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">04</span>Studios &middot; the thread</p>
+            <h3>Her story gets told, and the next woman hears it.</h3>
+            <p class="sb-p">On camera, in her own voice, in the same look as every <span class="nb">ASSET-&#8288;U</span> story. Studios is where we amplify, and the thread that tells every other beat.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Her audience, and the women in it who are living her first scene.</dd></div><div><dt>What they do next</dt><dd>Share her film and follow her to <span class="nb">ASSET-&#8288;U</span>.</dd></div></dl>
+          </div>
+        </li>
+        <li class="sb rv" id="sb5">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-ventures.jpg" alt="Film frame: the woman shakes hands with a team owner and her husband in a suite above an arena court." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">05</span>Ventures</p>
+            <h3>She invests in what comes next.</h3>
+            <p class="sb-p">What she owns starts working. She joins the women buying into teams, real estate and private market deals, building wealth instead of only earning it.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Women with capital, and the men who support them, deciding where it goes.</dd></div><div><dt>What they do next</dt><dd>Ask how to invest alongside <span class="nb">ASSET-&#8288;U</span>.</dd></div></dl>
+          </div>
+        </li>
+        <li class="sb rv" id="sb6">
+          <span class="sb-node" aria-hidden="true"></span>
+          <figure class="sb-pic"><img src="img/f-door.jpg" alt="Film frame: a young woman walks into a warm kitchen where the women at the table turn to welcome her." width="1600" height="900" loading="lazy" decoding="async"></figure>
+          <div class="sb-tx">
+            <p class="sb-k"><span class="sb-n">06</span>Every woman</p>
+            <h3>Now she holds the door.</h3>
+            <p class="sb-p">Four divisions, one table. Her kitchen is full of the women who brought her in, and she opens the door for the next one. Build, own, amplify, protect.</p>
+            <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Every woman. That is the point.</dd></div><div><dt>What they do next</dt><dd>Join <span class="nb">ASSET-&#8288;U</span> on launch day.</dd></div></dl>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="sb-end rv">
+      <p class="lede">Studios is the thread through all of it: one partner telling the story of a woman across Education and Community, the Brand House and Ventures, in one look, in the fold with you and always on. Your three-year goal is $1 billion in impact value. Every story we tell should move it.</p>
+      <a class="btn jump" href="#women">Meet the women <svg viewBox="0 0 16 16" aria-hidden="true" width="14" height="14" style="fill:none;stroke:currentColor;stroke-width:2"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap brands" id="brands">
+  <div class="in">
+    <div class="head split rv">
+      <p class="eyebrow">Studios &middot; One story for every brand</p>
+      <h2>A story for every brand you named.</h2>
+      <p class="lede">One idea each, built on your four words: build, own, amplify, protect. Every one ends on &ldquo;The asset is you.&rdquo; in the same look as the films, and every one shoots once and cuts down for social, so Studios stays always on. We travel wherever the story is, from Vietnam to every city her athletes play in.</p>
+    </div>
+    <div class="bs-grid">
+      <article class="bs rv" style="--i:0">
+        <figure class="bs-pic"><img src="img/bs-sports.jpg" alt="Concept frame: an athlete in a cream warm-up jacket sits alone courtside in an empty arena at night, a basketball beside her, looking up at the seats." width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <p class="bs-k">House of HER Sports</p>
+        <h3>The Other Stat Sheet</h3>
+        <p class="bs-idea">Every athlete has a stat line. Nobody shows the one that matters after she retires: what she owns.</p>
+        <p class="bs-film"><b>What we film.</b> One athlete an episode, in her city, on game day and at home. Her season numbers come up the way a broadcast shows them. Then a second sheet builds beside them: her name, her deals, her stake.</p>
+        <p class="bs-line">Every season ends. What she owns doesn&rsquo;t.</p>
+        <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Athletes and their families deciding who represents them.</dd></div><div><dt>What they do next</dt><dd>Ask House of HER Sports about representation.</dd></div></dl>
+      </article>
+      <article class="bs rv" style="--i:1">
+        <figure class="bs-pic"><img src="img/bs-hair.jpg" alt="Concept frame: a hair artisan and a buyer in a cream blazer hold one long bundle of hair up to the window light in a sunlit workshop." width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <p class="bs-k">House of HER Hair</p>
+        <h3>The Source</h3>
+        <p class="bs-idea">Most women never see where their hair comes from. You are going to Vietnam to choose it. The film goes with you.</p>
+        <p class="bs-film"><b>What we film.</b> We travel with your team and follow one bundle from the hands that choose it to a chair in Dallas, where a woman sees herself in the mirror for the first time.</p>
+        <p class="bs-line">Women own this, from the source.</p>
+        <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Women who buy hair, and the stylists they trust.</dd></div><div><dt>What they do next</dt><dd>Join the list before launch.</dd></div></dl>
+      </article>
+      <article class="bs rv" style="--i:0">
+        <figure class="bs-pic"><img src="img/bs-wellness.jpg" alt="Concept frame: a grandmother, a mother and a teenage daughter at a round kitchen table at sunrise, the mother taking a calm breath with her eyes closed." width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <p class="bs-k">Be HER Wellness</p>
+        <h3>Protect What You Built</h3>
+        <p class="bs-idea">She built the business, the house and the family&rsquo;s future. The one asset she never protected is herself.</p>
+        <p class="bs-film"><b>What we film.</b> Three generations at one kitchen table at dawn. Her mother never had the time. Her daughter is watching what she does now. For the first time, she takes the hour that&rsquo;s hers.</p>
+        <p class="bs-line">Your health is the first asset. Protect it.</p>
+        <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Women who built everything and come last on their own list.</dd></div><div><dt>What they do next</dt><dd>Start with Be HER Wellness, and bring their mother.</dd></div></dl>
+      </article>
+      <article class="bs rv" style="--i:1">
+        <figure class="bs-pic"><img src="img/bs-creators.jpg" alt="Concept frame: a creator in a camel blazer at a boardroom table above the city slides one cream folder back and keeps her hand on the other." width="1600" height="900" loading="lazy" decoding="async"></figure>
+        <p class="bs-k">Creators Capital</p>
+        <h3>What Do I Own?</h3>
+        <p class="bs-idea">&ldquo;You&rsquo;re paying me to sell it. What do I own?&rdquo; The question every creator should be asking.</p>
+        <p class="bs-film"><b>What we film.</b> One creator an episode brings a real deal to the table. We show it twice: once as a fee, once as a stake.</p>
+        <p class="bs-line">Stop selling what you&rsquo;ll never own.</p>
+        <dl class="sb-dl"><div><dt>Who is watching</dt><dd>Creators tired of selling things they will never own.</dd></div><div><dt>What they do next</dt><dd>Apply to Creators Capital.</dd></div></dl>
+      </article>
+    </div>
+    <p class="bs-note rv">Concept frames made for this proposal, not real people. Be HER Wellness makes no product claims; every word about what it does comes from your team.</p>
+  </div>
+</section>
+
+<section class="dark wrap" id="women">
+  <div class="in">
+    <div class="head split rv">
+      <p class="eyebrow">The women &middot; Across the divisions</p>
+      <h2>The story of a woman. Every woman.</h2>
+      <p class="lede">You asked us to think across the divisions about who these women are. Here they are, each with the division where her story lives. Concept frames made for this proposal, not real people.</p>
+    </div>
+    <div class="cw-lead rv">
+      <figure class="cw"><div class="cw-ph"><img src="img/c-founder-tall.jpg" alt="Concept frame: the founder speaking on camera in a charcoal suit." width="960" height="1200" loading="lazy" decoding="async"></div></figure>
+      <div class="cw-tx">
+        <p class="cw-t">Studios &middot; The founder film</p>
+        <h3>The founder</h3>
+        <p>Thirty years of watching women make money, lose it and take the risks. She calls the system a secret, and she is done keeping it. Her film opens the launch, and every story after it follows her lead.</p>
+      </div>
+    </div>
+    <div class="cw-band rv" id="cwEdu">
+      <div class="cw-h"><h3>Education and Community</h3><p>Micro Masterclass Learning&trade;: the class first, then an AI twin carries the business case study. A community of owners around it.</p></div>
+      <div class="cw-row cw-edu">
+        <figure class="cw" style="--i:0"><div class="cw-ph"><img src="img/c-bread.jpg" alt="Concept frame: the breadwinner coming home from work, keys in hand, in a wood-paneled hallway." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">Education and Community</span><b>The breadwinner</b><span class="cw-l">Heads her household, divorced, finding her way through the system. She needs community.</span></figcaption></figure>
+        <figure class="cw" style="--i:1"><div class="cw-ph"><img src="img/c-mom.jpg" alt="Concept frame: the mom signing a page on a clipboard, her baby asleep on her shoulder." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">Education and Community</span><b>The mom</b><span class="cw-l">Signs for what she owns with the baby asleep on her shoulder.</span></figcaption></figure>
+        <figure class="cw" style="--i:2"><div class="cw-ph"><img src="img/c-expert.jpg" alt="Concept frame: the expert making one point to camera, one finger raised." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">Education and Community</span><b>The expert</b><span class="cw-l">One expert, one skill, one action. She teaches the class first, then her twin carries the case study.</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="cw-band rv" id="cwBh">
+      <div class="cw-h"><h3>Brand House</h3><p>Four houses under one roof: talent, product and capital.</p></div>
+      <div class="cw-row cw-bh">
+        <figure class="cw" style="--i:0"><div class="cw-ph"><img src="img/c-athlete.jpg" alt="Concept frame: the athlete in a low stance, the ball mid-bounce, under turquoise light." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">House of HER Sports</span><b>The athlete</b><span class="cw-l">NIL or pro. The world counts her points. Her story is what she owns.</span></figcaption></figure>
+        <figure class="cw" style="--i:1"><div class="cw-ph"><img src="img/c-hair.jpg" alt="Concept frame: the maker holding up a long bundle of hair to judge it." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">House of HER Hair</span><b>The maker</b><span class="cw-l">Goes to the source and chooses the hair herself.</span></figcaption></figure>
+        <figure class="cw" style="--i:2"><div class="cw-ph"><img src="img/c-wellness.jpg" alt="Concept frame: the wellness woman in an armchair, one hand on her chest." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">Be HER Wellness</span><b>The wellness woman</b><span class="cw-l">Takes care of everybody. Here the tagline is literal: the asset is her.</span></figcaption></figure>
+        <figure class="cw" style="--i:3"><div class="cw-ph"><img src="img/c-creator.jpg" alt="Concept frame: the creator at a deal table, a city at sunset behind her." width="960" height="1200" loading="lazy" decoding="async"></div><figcaption><span class="cw-t">Creators Capital</span><b>The creator</b><span class="cw-l">An audience and, until now, no stake in what she promotes. Hers is the story above.</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="cw-band rv" id="cwVen">
+      <div class="cw-ven">
+        <figure class="cw"><div class="cw-ph"><img src="img/c-innovator.jpg" alt="Concept frame: the innovator holding a basketball in an arena suite, her husband beside her." width="960" height="1200" loading="lazy" decoding="async"></div></figure>
+        <div class="cw-vt">
+          <h3 style="font-size:clamp(1.8rem,1.3rem + 2vw,2.8rem)">Ventures</h3>
+          <p class="cw-l" style="margin-top:.5rem">Private and public markets: teams, real estate and private market deals.</p>
+          <b class="cw-b" style="margin-top:1.75rem">The innovator</b>
+          <p class="cw-l">Married, building a legacy with her husband. They want their money in ventures, and a team of their own.</p>
+          <p class="cw-men"><span class="nb">ASSET-&#8288;U</span> is for women and the men who support them. One of them is here, beside her.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="wrap" id="ask">
   <div class="in ask-grid">
     <div class="head rv" style="margin:0">
       <p class="eyebrow">What you asked for</p>
-      <h2>One partner for the whole build.</h2>
-      <p class="lede">From our call and Jocelyn&rsquo;s recap. The launch is filmed and photographed in one production day, so your out&#8209;of&#8209;town team flies in once. The classes follow on their own shoot days.</p>
+      <h2>From launch day to class fifty-five.</h2>
+      <p class="lede">This is the part the proposal prices, from our first call and Jocelyn&rsquo;s recap: the Enterprise Launch and all 55 classes. The launch is filmed and photographed in one production day, so your out&#8209;of&#8209;town team flies in once. The classes follow on their own shoot days.</p>
     </div>
     <ul class="ledger rv">
       <li style="--i:0"><b>1</b><span><strong>Enterprise Launch.</strong> Danyel&rsquo;s founder film, the team photographed, each creatorpreneur&rsquo;s story, behind the scenes.</span></li>
@@ -889,34 +1271,10 @@ a.bl-s.go:active{transform:translateY(1px)}
 </section>
 
 <figure class="room">
-  <img src="img/window.jpg" alt="Concept frame: the empty studio at dusk, a charcoal backdrop and a stool waiting in the light." width="1600" height="1067" loading="lazy">
+  <img src="img/c-social.jpg" alt="Concept frame: a woman in a bone coat walking into the light on a dark backdrop." width="1600" height="1067" loading="lazy" style="object-position:50% 40%">
   <span class="dim" aria-hidden="true"></span>
-  <figcaption>The studio, downtown Dallas<span class="sep"> &middot; </span><span class="nb">concept frame</span></figcaption>
+  <figcaption>Launch day<span class="sep"> &middot; </span><span class="nb">concept frame</span></figcaption>
 </figure>
-
-<section class="dark wrap" id="studio">
-  <div class="in">
-    <div class="head split rv">
-      <p class="eyebrow">The studio</p>
-      <h2>One room. Three ways to shoot it.</h2>
-      <p class="lede">Everything is made in one room, so every film, portrait and class belongs to the same world. The backdrop and the light change. The standard does not.</p>
-    </div>
-    <p class="hint rv">Choose a look to see it.</p>
-    <div class="looks rv">
-      <div class="stage" id="lookStage">
-        <img class="on" src="img/film.jpg" alt="Concept frame: a creatorpreneur speaking on a charcoal backdrop in warm, moody light." width="1600" height="1067" loading="lazy">
-        <img src="img/portrait.jpg" alt="Concept frame: an executive in a beige suit on a beige backdrop, in bright clean light." width="1067" height="1600" loading="lazy" style="object-position:50% 38%">
-        <img src="img/greenscreen.jpg" alt="Concept frame: a creatorpreneur on green seamless paper hung on two stands in the studio." width="1600" height="1067" loading="lazy">
-      </div>
-      <div class="picks" role="group" aria-label="Choose a look">
-        <button class="pick" type="button" aria-pressed="true" data-i="0" data-cap="Warm, moody light on a charcoal backdrop. For the founder film, the story videos and the classes."><img src="img/film.jpg" alt="" width="1600" height="1067" loading="lazy"><span><b>The film look</b><small>Showing now</small></span></button>
-        <button class="pick" type="button" aria-pressed="false" data-i="1" data-cap="Bright, clean light on a beige backdrop. For the eleven individual portraits."><img src="img/portrait.jpg" alt="" width="1067" height="1600" loading="lazy" style="object-position:50% 20%"><span><b>The portrait look</b><small>View this look</small></span></button>
-        <button class="pick" type="button" aria-pressed="false" data-i="2" data-cap="Green seamless paper on two stands. We film her here and place her anywhere in the edit, so she never has to leave the set."><img src="img/greenscreen.jpg" alt="" width="1600" height="1067" loading="lazy"><span><b>The green screen</b><small>View this look</small></span></button>
-      </div>
-    </div>
-    <p class="lookcap" id="lookCap" aria-live="polite">Warm, moody light on a charcoal backdrop. For the founder film, the story videos and the classes.</p>
-  </div>
-</section>
 
 <section class="wrap light" id="launch">
   <div class="in">
@@ -928,11 +1286,11 @@ a.bl-s.go:active{transform:translateY(1px)}
     <p class="hint rv">Choose a piece to see its job.</p>
     <div class="lib rv">
       <div class="stage" id="libStage">
-        <img class="on" src="img/founder.jpg" alt="Concept frame: the founder alone in a pool of light on the studio set." width="1600" height="1067" loading="lazy">
-        <img src="img/team.jpg" alt="Concept frame: eleven women of the team, standing and seated on a charcoal backdrop." width="1600" height="1067" loading="lazy">
-        <img src="img/story.jpg" alt="Concept frame: a creatorpreneur laughing mid-story on a charcoal backdrop." width="1600" height="1067" loading="lazy">
-        <img src="img/bts.jpg" alt="Concept frame: the team laughing between takes as one of them straightens another&rsquo;s blazer." width="1600" height="1067" loading="lazy">
-        <img src="img/social.jpg" alt="Concept frame: a woman in a bone coat walking toward camera across the studio floor." width="1600" height="1067" loading="lazy">
+        <img class="on" src="img/c-founder.jpg" alt="Concept frame: the founder alone in a pool of light on a charcoal backdrop." width="1600" height="1067" loading="lazy">
+        <img src="img/c-team.jpg" alt="Concept frame: the team together, standing and seated, on a charcoal backdrop." width="1600" height="1067" loading="lazy">
+        <img src="img/c-story.jpg" alt="Concept frame: a creatorpreneur laughing mid-story on a charcoal backdrop." width="1600" height="1067" loading="lazy">
+        <img src="img/c-bts.jpg" alt="Concept frame: the team laughing between takes as one of them straightens another&rsquo;s blazer." width="1600" height="1067" loading="lazy">
+        <img src="img/c-social.jpg" alt="Concept frame: a woman in a bone coat walking toward camera on a dark backdrop." width="1600" height="1067" loading="lazy">
       </div>
       <div id="pieces">
         <button class="piece" type="button" aria-expanded="true" data-i="0"><span class="t"><span class="h">Founder film</span><span class="go">See its job</span></span></button><div class="more"><div><p>2 to 3 minutes. Danyel on why she built ASSET-&#8288;U, shot as a film, not an interview: one woman, one pool of light, the room falling away behind her. Built on the four pillars in your brief, with 3 to 5 founder clips of about 30 seconds cut from the same interview.</p><ol class="beats"><li><b>The Conviction</b>What she believes, in her first line.</li><li><b>The Journey</b>What it took to get here.</li><li><b>The Decision</b>The moment she chose to build it.</li><li><b>The Invitation</b>The ask, and the end card.</li></ol><dl><div><dt>Its job</dt><dd>Establish an institution on day one, in the film people send to each other.</dd></div><div><dt>What the viewer does next</dt><dd>Goes to asset-u.co.</dd></div></dl></div></div>
@@ -973,7 +1331,7 @@ a.bl-s.go:active{transform:translateY(1px)}
     </div>
     <div class="rv">
       <div class="player" id="player">
-        <img src="img/classset.jpg" alt="Concept frame: an expert teaching to camera on the class set, with open space beside her for graphics." width="1600" height="1067" loading="lazy">
+        <img src="img/c-class.jpg" alt="Concept frame: an expert teaching to camera on a charcoal backdrop, with open space beside her for graphics." width="1600" height="1067" loading="lazy">
         <span class="tc" id="tc">00:00</span><span class="sample">Sample graphics</span>
         <div class="ov ov-open on"><span class="k">Micro Masterclass Learning&trade;</span><span class="big">Build with the exit in mind</span><i></i></div>
         <div class="ov"><div class="l3"><b>Your expert</b><small>Her title, her company</small></div></div>
@@ -1004,11 +1362,11 @@ a.bl-s.go:active{transform:translateY(1px)}
     <div class="promos rv" id="promos">
       <div class="pr-frames">
         <figure class="pf" data-len="30">
-          <div class="ph"><img src="img/classset.jpg" alt="Sample 30-second promo, cut vertical from the class footage." width="1600" height="1067" loading="lazy"><div class="pbars" aria-hidden="true"></div><span class="ptc" aria-hidden="true">0:00 / 0:30</span><span class="pcap" aria-hidden="true">Her sharpest line opens it.</span><div class="pend" aria-hidden="true"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><b>Watch the full class.</b></div></div>
+          <div class="ph"><img src="img/c-class.jpg" alt="Sample 30-second promo, cut vertical from the class footage." width="1600" height="1067" loading="lazy"><div class="pbars" aria-hidden="true"></div><span class="ptc" aria-hidden="true">0:00 / 0:30</span><span class="pcap" aria-hidden="true">Her sharpest line opens it.</span><div class="pend" aria-hidden="true"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><b>Watch the full class.</b></div></div>
           <figcaption><span class="len"><b>30</b>seconds</span><span class="now" aria-hidden="true">Hook</span></figcaption>
         </figure>
         <figure class="pf" data-len="15">
-          <div class="ph"><img src="img/classset.jpg" alt="" width="1600" height="1067" loading="lazy"><div class="pbars" aria-hidden="true"></div><span class="ptc" aria-hidden="true">0:00 / 0:15</span><span class="pcap" aria-hidden="true">Her sharpest line opens it.</span><div class="pend" aria-hidden="true"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><b>Watch the full class.</b></div></div>
+          <div class="ph"><img src="img/c-class.jpg" alt="" width="1600" height="1067" loading="lazy"><div class="pbars" aria-hidden="true"></div><span class="ptc" aria-hidden="true">0:00 / 0:15</span><span class="pcap" aria-hidden="true">Her sharpest line opens it.</span><div class="pend" aria-hidden="true"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><b>Watch the full class.</b></div></div>
           <figcaption><span class="len"><b>15</b>seconds</span><span class="now" aria-hidden="true">Hook</span></figcaption>
         </figure>
       </div>
@@ -1053,28 +1411,8 @@ a.bl-s.go:active{transform:translateY(1px)}
       <div class="hh-head">
         <p class="eyebrow">Room to grow</p>
         <h3>House of HER Sports, alongside the classes.</h3>
-        <p>Your brief asks for crew and availability from December through February. The classes keep shooting in blocks at the studio while House of HER Sports runs in its own brand system, scoped from its own brief. We add crew for the weeks the two overlap and travel for the February dates.</p>
-      </div>
-      <div class="hh-chart" aria-hidden="true">
-        <div class="hh-row hh-axis"><span></span><div class="hh-track"><span style="--x:0"><b>Dec</b><i>ember</i></span><span style="--x:34.44"><b>Jan</b><i>uary</i></span><span style="--x:68.89"><b>Feb</b><i>ruary</i></span></div></div>
-        <div class="hh-row"><p class="hh-name">The classes</p><div class="hh-track"><span class="hh-cls"><span>Class blocks at the studio, on dates we set together</span></span></div></div>
-        <div class="hh-row"><p class="hh-name">House of HER Sports</p><div class="hh-track hh-ev">
-          <span class="hh-pt st" style="--x:0;--i:0">Dec 1</span>
-          <span class="hh-pt" style="--x:65.56;--i:1">Jan 29</span>
-          <span class="hh-rng" style="--x:68.89;--w:12.22;--i:2"><i></i>Feb 1&ndash;12</span>
-          <span class="hh-pt" style="--x:83.33;--i:3">Feb 14</span>
-        </div></div>
-      </div>
-      <div class="hh-key">
-        <p class="hh-k">House of HER Sports dates, from your brief</p>
-        <dl>
-          <div><dt>Dec 1</dt><dd>Digital launch</dd></div>
-          <div><dt>Jan 29</dt><dd>Hard-launch content bank complete</dd></div>
-          <div><dt>Feb 1&ndash;12</dt><dd>Hard-launch campaign</dd></div>
-          <div><dt>Feb 14</dt><dd>Super Bowl LXI, SoFi Stadium</dd></div>
-          <div><dt>Feb 9&ndash;10 or 17</dt><dd>Bigger Than The Game, date to confirm</dd></div>
-        </dl>
-        <p class="hh-note">Drawn to scale, December 1 to February 28.</p>
+        <p>Your brief asks for crew and availability for House of HER Sports alongside the classes. The classes keep shooting in blocks at the studio while House of HER Sports runs in its own brand system, scoped from its own brief. We add crew for the weeks the two overlap, and we travel when its campaign does.</p>
+        <p class="hh-note">The House of HER Sports dates in your brief were set before the launch moved to January 1. Send the current ones and we will plan the two schedules side by side.</p>
       </div>
     </div>
   </div>
@@ -1155,7 +1493,7 @@ a.bl-s.go:active{transform:translateY(1px)}
       <p class="bb-n">A $2,750 discount when the launch and both class phases are booked in one agreement. It comes off the final class installment.</p>
     </div>
 
-    <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait. The learning platform, the mobile app and its network, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
+    <p class="also rv">The $99,000 is complete on its own and covers every film, class, promo and portrait in the launch and the 55 classes. The division stories on this page beyond the launch and the classes are scoped from their own briefs. The learning platform, the mobile app and its network, live webinars, email marketing and print are separate add-ons, quoted on request. <a href="#house">See them below.</a></p>
 
     <div class="qb rv" id="quote">
       <div class="qb-head">
@@ -1266,7 +1604,7 @@ a.bl-s.go:active{transform:translateY(1px)}
           <li><span class="bl-t"><b>Ownership and handover</b>ASSET-&#8288;U owns the footage, the edits and the IP. Raw footage and project files hand over each phase</span><span class="bl-s inc">Agreed</span></li>
           <li><span class="bl-t"><b>Music, releases and consent</b>Music cleared for your channels. Releases, and likeness and AI consent, signed before production</span><span class="bl-s inc">Agreed</span></li>
           <li><span class="bl-t"><b>Costs</b>A rate for each class and a price for each launch piece</span><a class="bl-s go" href="#rates">The rate card</a></li>
-          <li><span class="bl-t"><b>Capacity</b>Crew and availability for the classes and House of HER Sports, December through February</span><a class="bl-s go" href="#hohs">The plan</a></li>
+          <li><span class="bl-t"><b>Capacity</b>Crew and availability for the classes and House of HER Sports, side by side</span><a class="bl-s go" href="#hohs">The plan</a></li>
         </ul>
       </div>
     </div>
@@ -1278,7 +1616,7 @@ a.bl-s.go:active{transform:translateY(1px)}
     <div class="head split rv">
       <p class="eyebrow">Also in-house · one studio</p>
       <h2>The films are the start. We build where they live too.</h2>
-      <p class="lede">You told us Education and Community is your fourth division, and that each founder brings a network to women owners. We build the home for both, from the same studio that makes the films. One partner to brief, start to finish.</p>
+      <p class="lede">You told us Education and Community is one of your four divisions, beside the Brand House, Studios and Ventures, and that each founder brings a network to women owners. We build the home for both, from the same studio that makes the films. One partner to brief, start to finish.</p>
       <p class="lede proof2">The platform is already built and in use: <a href="https://taylormadeacademy.com/" target="_blank" rel="noopener">Taylormade Academy</a> runs classes, live rooms and a member community on it today, and a university cohort program runs on it too. ASSET-&#8288;U would run on it next, in your brand. We already ship to the App Store: Taylormade Camera is there today.</p>
     </div>
 
@@ -1323,7 +1661,7 @@ a.bl-s.go:active{transform:translateY(1px)}
       <div>
         <div class="mail" aria-live="polite">
           <div class="hd"><i>A</i><div><b id="mSub">This week: Own your numbers</b><span>ASSET-&#8288;U · to you</span></div></div>
-          <div class="bd" id="mBd"><img id="mImg" src="img/lms3.jpg" alt="" loading="lazy" style="object-position:40% 30%">
+          <div class="bd" id="mBd"><img id="mImg" src="img/c-lms3.jpg" alt="" loading="lazy" style="object-position:40% 30%">
             <div class="tx"><small id="mEy">Micro Masterclass Learning&trade; · Class 6</small><strong id="mH">Thirty minutes. One number that runs your business.</strong><p id="mP">This week&rsquo;s class is open. Take it before Thursday and bring your questions to the live session.</p><span class="b" id="mB">Start the class</span></div></div>
         </div>
         <p class="smp">Sample emails. Class titles, days and times are placeholders.</p>
@@ -1347,13 +1685,13 @@ a.bl-s.go:active{transform:translateY(1px)}
       </div>
       <div>
         <div class="pstage" id="pstage" data-k="0">
-          <div class="pm pm0"><img src="img/print.jpg" alt="A step and repeat wall and a pop-up banner with the ASSET-U logo in the studio" loading="lazy" width="1500" height="1000"></div>
+          <div class="pm pm0" role="img" aria-label="Concept: a step and repeat wall and a pop-up banner with the ASSET-U logo"><div class="srv"><div class="sr-wall"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><span class="ft l"></span><span class="ft r"></span></div><div class="bnr"><img src="img/asset-u-logo.png" alt="" width="720" height="236"><b>The asset is you.</b><small>Build &middot; Own &middot; Amplify &middot; Protect</small></div></div></div>
           <div class="pm pm1"><div class="pcard"><button type="button" id="pcard" aria-pressed="false" aria-label="Flip the business card">
             <span class="f f1"><img src="img/asset-u-logo.png" alt="ASSET-U"><i class="tf">Tap to flip</i></span>
             <span class="f f2"><b>Danyel</b><span>ASSET-&#8288;U Enterprise Holdings</span><em>Build &middot; Own &middot; Amplify &middot; Protect</em></span>
           </button></div></div>
         </div>
-        <p class="smp" id="pcap">Concept frame: step and repeat and pop-up banner in our studio.</p>
+        <p class="smp" id="pcap">Concept: a step and repeat wall and a pop-up banner for launch day.</p>
       </div>
     </div>
 
@@ -1368,7 +1706,7 @@ a.bl-s.go:active{transform:translateY(1px)}
     <div class="head split rv">
       <p class="eyebrow">Optional addition &middot; AI twins</p>
       <h2>Your expertise, on screen anywhere.</h2>
-      <p class="lede">An AI twin shows up when your expert can&rsquo;t: on the website, in the community, across social. This one is Danyel.</p>
+      <p class="lede">Class first, then the case study: your expert teaches the class, and her AI twin carries the business case study to the website, the community and social. It is how we show a story fast. This one is Danyel.</p>
     </div>
     <figure class="twin-wide rv">
       <div class="tstage">
@@ -1394,7 +1732,7 @@ a.bl-s.go:active{transform:translateY(1px)}
 </section>
 
 <figure class="room teamband">
-  <img src="img/team.jpg" alt="Concept frame: eleven women of the team on a charcoal backdrop." width="1600" height="1067" loading="lazy" style="object-position:50% 30%">
+  <img src="img/c-team.jpg" alt="Concept frame: the team together on a charcoal backdrop." width="1600" height="1067" loading="lazy" style="object-position:50% 30%">
   <figcaption>The team, launch day<span class="sep"> &middot; </span><span class="nb">concept frame</span></figcaption>
 </figure>
 
@@ -1403,11 +1741,11 @@ a.bl-s.go:active{transform:translateY(1px)}
     <h2 class="rv" id="closeH">You build the institution. <span class="l2">We would be honored to help the world see it.</span></h2>
     <div class="sign rv">
       <div>
-        <p class="lede" style="margin-bottom:1.25rem">Reply with a yes to the three phases and the production day that works for Danyel, or with the changes you want. Name any extras in the same reply. Once we confirm the day, I&rsquo;ll send the agreement, and your deposit holds it.</p>
+        <p class="lede" style="margin-bottom:1.25rem">Before any creative is locked, I would like one working session with Danyel: why she is building this, in her own words. Every story on this page gets better once I have that. Reply with a time that works for her, and I will set it.</p>
         <b>Elliott Taylor</b><span>Founder and Creative Director, Taylormade Creative</span>
       </div>
       <div class="contact">
-        <a class="btn solid" href="mailto:taylormademd@gmail.com?subject=ASSET-U%20proposal">Reply to Elliott</a>
+        <a class="btn solid" href="mailto:taylormademd@gmail.com?subject=ASSET-U%20working%20session%20with%20Danyel">Set the working session</a>
         <div class="copy"><a class="addr" id="em" href="mailto:taylormademd@gmail.com?subject=ASSET-U%20proposal">taylormademd@gmail.com</a><button class="btn" type="button" data-copy="em">Copy email</button></div>
         <div class="copy"><a class="addr" id="ph" href="tel:+18177071291">(817) 707-1291</a><button class="btn" type="button" data-copy="ph">Copy number</button></div>
       </div>
@@ -1450,11 +1788,7 @@ a.bl-s.go:active{transform:translateY(1px)}
     var f0=hf[0],ready=[f0.complete?(f0.decode?f0.decode().catch(function(){}):1):new Promise(function(r){f0.onload=f0.onerror=r})];
     if(d.fonts&&d.fonts.ready)ready.push(d.fonts.ready);
     if(window.Promise)Promise.all(ready).then(goNow,goNow);else goNow();
-    // the cover runs through the story: founder film, launch day, class one, class fifty-five
-    var FC=['Concept frame \u00b7 The founder film','Concept frame \u00b7 Class one','Concept frame \u00b7 Class fifty-five'];
-    coverTick=function(){if(d.hidden||scrollY>hero.offsetHeight||!root.classList.contains('go'))return;var n=(hfi+1)%hf.length,im=hf[n],pv=hf[hfi];if(!im.complete||!im.naturalWidth)return;
-      im.classList.remove('first');im.classList.add('on','kb');pv.classList.add('out');pv.classList.remove('on');setTimeout(function(){pv.classList.remove('kb','first','out')},1500);hfi=n;
-      fcap.style.opacity=0;setTimeout(function(){fcap.textContent=FC[n];fcap.style.opacity=1},520)};
+    // the cover holds on one picture: the collection
   }
   // counters
   function countUp(el,to,pre){var t0=performance.now();(function f(t){var k=clamp((t-t0)/1500,0,1),e=1-Math.pow(1-k,4);el.textContent=pre+Math.round(to*e).toLocaleString('en-US');if(k<1)requestAnimationFrame(f)})(t0)}
@@ -1475,8 +1809,8 @@ a.bl-s.go:active{transform:translateY(1px)}
   if(room1&&!reduce&&'IntersectionObserver' in window){room1.classList.add('dimmed');new IntersectionObserver(function(es,o){if(es[0].isIntersecting){room1.classList.add('lit');o.disconnect()}},{threshold:.5}).observe(room1)}
   // 55 Mondays wall
   var run=d.getElementById('run'),pin=run.querySelector('.pin'),wall=d.getElementById('wall'),cells=[],rN=d.getElementById('runN'),rC=d.getElementById('runC'),rP=d.getElementById('runP'),rL=d.getElementById('runLine'),rB=d.getElementById('runBar'),rCur=-1,rFull=null;
-  var WI=['lms3','classset','lms4','story','lms1','lms2','film','lms5','lms6','hero'];
-  var wCols=matchMedia('(max-width:820px)').matches?5:11;for(var k=0;k<55;k++){var c=d.createElement('i'),im=new Image();im.alt='';im.decoding='async';im.loading='lazy';im.src='img/w-'+WI[(k*7+Math.floor(k/wCols)*(wCols===5?4:2))%WI.length]+'.jpg';im.style.objectPosition=(28+(k*37)%46)+'% '+(18+(k*23)%30)+'%';c.appendChild(im);wall.appendChild(c);cells.push(c)}
+  var WI=['lms3','expert','lms4','story','lms1','lms2','film','lms5','lms6','hero'];
+  var wCols=matchMedia('(max-width:820px)').matches?5:11;for(var k=0;k<55;k++){var c=d.createElement('i'),im=new Image();im.alt='';im.decoding='async';im.loading='lazy';im.src='img/w2-'+WI[(k*7+Math.floor(k/wCols)*(wCols===5?4:2))%WI.length]+'.jpg';im.style.objectPosition=(28+(k*37)%46)+'% '+(18+(k*23)%30)+'%';c.appendChild(im);wall.appendChild(c);cells.push(c)}
   function setRun(n,full){
     if(n!==rCur){cells.forEach(function(c,i){c.classList.toggle('on',i<n);c.classList.toggle('cur',i===n-1)});rN.textContent=n;rC.textContent=n;rP.textContent=n*2;
       var tx=n<=1?'Class one. The standard is set.':n<=28?'Phase two. Classes 1 to 28.':n<55?'Phase three. Classes 29 to 55.':'Class fifty-five. The library is complete.';if(rL.textContent!==tx){rL.textContent=tx;rL.classList.remove('sw');void rL.offsetWidth;rL.classList.add('sw')}
@@ -1485,25 +1819,28 @@ a.bl-s.go:active{transform:translateY(1px)}
   setRun(55,true);
   // one scroll frame for every scrubbed effect
   var stepsEl=reduce?null:d.getElementById('steps'),stepLis=stepsEl?[].slice.call(stepsEl.children):[],glow=null,gx=0,gy=0,gHas=false;if(stepsEl)stepsEl.classList.add('sc');
+  var sbW=d.getElementById('sbWrap'),sbLine=sbW?sbW.querySelector('.sb-line'):null,sbs=sbW?[].slice.call(sbW.querySelectorAll('.sb')):[];if(!sbLine)sbW=null;
   var rooms=[].slice.call(d.querySelectorAll('figure.room')),devs=d.querySelector('.devs'),brow=d.querySelector('.brow'),phone=d.querySelector('.phone');
   function frame(){var vh=innerHeight,y=scrollY,r,q,e;
     if(reduce)return;
-    if(y<hero.offsetHeight+60){heroImg.style.transform='translate3d(0,'+(y*.22).toFixed(1)+'px,0)';heroIn.style.transform='translate3d(0,'+(-y*.06).toFixed(1)+'px,0)';heroIn.style.opacity=(1-clamp(y/(hero.offsetHeight*.8),0,1)*.8).toFixed(3)}
+    if(y<hero.offsetHeight+60){if(innerWidth>=1024)heroImg.style.transform='translate3d(0,'+(y*.22).toFixed(1)+'px,0)';else heroImg.style.transform='';heroIn.style.transform='translate3d(0,'+(-y*.06).toFixed(1)+'px,0)';heroIn.style.opacity=(1-clamp(y/(hero.offsetHeight*.8),0,1)*.8).toFixed(3)}
     r=run.getBoundingClientRect();if(r.top<vh&&r.bottom>0){q=clamp((65-r.top)/Math.max(1,r.height-pin.offsetHeight),0,1);setRun(1+Math.round(clamp((q-.04)/.78,0,1)*54),q>.84)}
     rooms.forEach(function(f){var b=f.getBoundingClientRect();if(b.bottom<0||b.top>vh)return;var t=(vh-b.top)/(vh+b.height),im=f.querySelector('img');
       im.style.transform=f.classList.contains('teamband')?'scale(1.14) translate3d('+((.5-t)*9).toFixed(2)+'%,0,0)':'scale(1.14) translate3d(0,'+((.5-t)*9).toFixed(2)+'%,0)'});
     if(devs){r=devs.getBoundingClientRect();if(r.top<vh&&r.bottom>0){q=clamp((vh-r.top)/(vh*.8),0,1);e=1-Math.pow(1-q,3);
       if(brow)brow.style.transform='rotateX('+((1-e)*20).toFixed(2)+'deg) translate3d(0,'+((1-e)*44).toFixed(1)+'px,0) scale('+(.92+.08*e).toFixed(4)+')';
       if(phone)phone.style.transform='translate3d(0,'+((1-e)*96).toFixed(1)+'px,0) rotate('+((1-e)*3.5).toFixed(2)+'deg)'}}
+    if(sbW){r=sbW.getBoundingClientRect();if(r.top<vh&&r.bottom>0){var mk=vh*.62;sbLine.style.setProperty('--t',clamp((mk-r.top)/r.height,0,1).toFixed(4));sbs.forEach(function(li){li.classList.toggle('act',li.getBoundingClientRect().top<mk+1)})}else if(r.bottom<=0){sbLine.style.setProperty('--t',1);sbs.forEach(function(li){li.classList.add('act')})}}
     if(stepsEl){r=stepsEl.getBoundingClientRect();if(r.top<vh&&r.bottom>0){stepLis.forEach(function(li){li.classList.toggle('act',li.getBoundingClientRect().top<vh*.86)})}}
-    if(glow&&gHas){var ge=d.elementFromPoint(gx,gy);glow.classList.toggle('on',!!(ge&&ge.closest&&ge.closest('.dark,.room')))}
+    if(glow&&gHas){var ge=d.elementFromPoint(gx,gy);glow.classList.toggle('on',glowOK(ge,gx,gy))}
     if(cw.length){r=closeH.getBoundingClientRect();if(r.top<vh&&r.bottom>0){q=clamp((vh*.9-r.top)/(r.height*1.1),0,1);var f2=q*(cw.length+3);cw.forEach(function(w,i){w.style.setProperty('--o',clamp(f2-i,.16,1).toFixed(2))});closeH.style.setProperty('--g',clamp((f2-l2at+1)/3,0,1).toFixed(3))}}
   }
   addEventListener('resize',frame);addEventListener('load',frame);
   addEventListener('beforeprint',function(){root.classList.add('go');setRun(55,true);[].forEach.call(d.querySelectorAll('[data-to]'),function(el){el.textContent=(el.getAttribute('data-pre')||'')+(+el.getAttribute('data-to')).toLocaleString('en-US')});[].forEach.call(d.querySelectorAll('.rv'),function(el){el.classList.add('on')})});
   // key light
+  function glowOK(el,x,y){if(!el||!el.closest||!el.closest('.dark,.room'))return false;if(el.closest('.hero')){var b=heroImg.getBoundingClientRect();if(x>=b.left&&x<=b.right&&y>=b.top&&y<=b.bottom)return false}if(el.closest('.cw-ph'))return false;return true}
   if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){var gt=false;glow=d.createElement('div');glow.className='glow';glow.setAttribute('aria-hidden','true');d.body.appendChild(glow);
-    addEventListener('pointermove',function(e){gx=e.clientX;gy=e.clientY;gHas=true;glow.classList.toggle('on',!!(e.target.closest&&e.target.closest('.dark,.room')));if(!gt){gt=true;requestAnimationFrame(function(){gt=false;glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)'})}},{passive:true});
+    addEventListener('pointermove',function(e){gx=e.clientX;gy=e.clientY;gHas=true;glow.classList.toggle('on',glowOK(e.target,gx,gy));if(!gt){gt=true;requestAnimationFrame(function(){gt=false;glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)'})}},{passive:true});
     d.documentElement.addEventListener('pointerleave',function(){glow.classList.remove('on')})}
   // reveals
   var rv=[].slice.call(d.querySelectorAll('.rv')),steps=d.getElementById('steps');
@@ -1518,7 +1855,7 @@ a.bl-s.go:active{transform:translateY(1px)}
   function onScroll(){tick=false;var h=root.scrollHeight-innerHeight;prog.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')';
     var bb=barEl.getBoundingClientRect(),want=barDk(bb.top+1)&&barDk(bb.bottom-1);if(barHold){}else if(barWant===null){barWant=want;barEl.classList.toggle('ondark',want)}else if(want!==barWant){barWant=want;clearTimeout(barT);barT=setTimeout(function(){barEl.classList.toggle('ondark',barWant)},120)}frame()}
   addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
-  [].forEach.call(d.querySelectorAll('.bar nav a'),function(a){a.addEventListener('click',function(){barHold=true;var done=false,rel=function(){if(done)return;done=true;barHold=false;onScroll()};addEventListener('scrollend',rel,{once:true});setTimeout(rel,1600)})});
+  [].forEach.call(d.querySelectorAll('.bar nav a,a.jump'),function(a){a.addEventListener('click',function(){barHold=true;var done=false,rel=function(){if(done)return;done=true;barHold=false;onScroll()};addEventListener('scrollend',rel,{once:true});setTimeout(rel,1600)})});
   var links=[].slice.call(d.querySelectorAll('.bar nav a'));
   if('IntersectionObserver' in window){
     var so=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;links.forEach(function(a){if(a.getAttribute('href')==='#'+e.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})})},{rootMargin:'-45% 0px -50% 0px'});
@@ -1549,25 +1886,18 @@ a.bl-s.go:active{transform:translateY(1px)}
   function fsX(){var fi=fs.querySelector('iframe');if(fi&&fi.contentWindow)fi.contentWindow.postMessage('lms-pause','*');fs.classList.remove('on');d.body.style.overflow='';inertAll(false);(fsFrom||fo).focus({preventScroll:true});fsFrom=null;
     if(!reduce)loops.forEach(function(v){var b=v.getBoundingClientRect();if(b.height>0&&!v.parentNode.classList.contains('live')&&(Math.min(b.bottom,innerHeight)-Math.max(b.top,0))>=b.height*.35){if(!v.getAttribute('src'))v.src=v.getAttribute('data-src');var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}})}
   d.getElementById('fsClose').addEventListener('click',fsX);addEventListener('keydown',function(e){if(e.key==='Escape'&&fs.classList.contains('on'))fsX()});
-  var MAILS=[['This week: Own your numbers','img/lms3.jpg','40% 30%','Micro Masterclass Learning\u2122 \u00b7 Class 6','Thirty minutes. One number that runs your business.','This week\u2019s class is open. Take it before Thursday and bring your questions to the live session.','Start the class'],
-   ['Thursday, live: bring your questions','img/film.jpg','60% 30%','Live Q&A \u00b7 this Thursday','Your questions on this week\u2019s class, answered live.','Join from the platform or the app. If you miss it, the recording is filed in your library afterward.','Save my seat'],
-   ['ASSET-\u2060U is open','img/team.jpg','50% 40%','Launch day','Meet the women building it.','The founder film is out today. Meet the team behind it.','Watch the founder film']];
+  var MAILS=[['This week: Own your numbers','img/c-lms3.jpg','40% 30%','Micro Masterclass Learning\u2122 \u00b7 Class 6','Thirty minutes. One number that runs your business.','This week\u2019s class is open. Take it before Thursday and bring your questions to the live session.','Start the class'],
+   ['Thursday, live: bring your questions','img/c-film.jpg','60% 30%','Live Q&A \u00b7 this Thursday','Your questions on this week\u2019s class, answered live.','Join from the platform or the app. If you miss it, the recording is filed in your library afterward.','Save my seat'],
+   ['ASSET-\u2060U is open','img/c-team.jpg','50% 40%','Launch day','Meet the women building it.','The founder film is out today. Meet the team behind it.','Watch the founder film']];
   var mb=d.getElementById('mBd');
   var mtabs=d.getElementById('mtabs'),mailEl=d.querySelector('.mail'),mIdx=0,mAuto=!reduce&&('IntersectionObserver' in window),mTimer=0;
   function setMail(i,user){var b=mtabs.children[i],m=MAILS[i];mIdx=i;[].forEach.call(mtabs.children,function(x){x.setAttribute('aria-pressed',x===b)});mb.classList.add('sw');
     setTimeout(function(){d.getElementById('mSub').textContent=m[0];var im=d.getElementById('mImg');im.src=m[1];im.style.objectPosition=m[2];d.getElementById('mEy').textContent=m[3];d.getElementById('mH').textContent=m[4];d.getElementById('mP').textContent=m[5];d.getElementById('mB').textContent=m[6];mb.classList.remove('sw');if(user&&innerWidth<900)mailEl.scrollIntoView({block:'nearest',behavior:'smooth'})},260)}
   mtabs.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;mAuto=false;clearInterval(mTimer);mtabs.classList.remove('auto');mailEl.setAttribute('aria-live','polite');setMail(+b.getAttribute('data-m'),true)});
   if(mAuto){mailEl.setAttribute('aria-live','off');new IntersectionObserver(function(es){clearInterval(mTimer);var v=es[0].isIntersecting&&mAuto;mtabs.classList.toggle('auto',v);if(v)mTimer=setInterval(function(){setMail((mIdx+1)%MAILS.length,false)},5000)},{threshold:.5}).observe(mailEl)}
-  var PC=['Concept frame: step and repeat and pop-up banner in our studio.','Sample card. Tap it to flip.'];
+  var PC=['Concept: a step and repeat wall and a pop-up banner for launch day.','Sample card. Tap it to flip.'];
   d.getElementById('ptabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;[].forEach.call(this.children,function(x){x.setAttribute('aria-pressed',x===b)});d.getElementById('pstage').setAttribute('data-k',b.getAttribute('data-k'));d.getElementById('pcap').textContent=PC[+b.getAttribute('data-k')];if(innerWidth<900)d.getElementById('pstage').scrollIntoView({block:'nearest',behavior:'smooth'})});
   d.getElementById('pcard').addEventListener('click',function(){this.setAttribute('aria-pressed',this.getAttribute('aria-pressed')!=='true')});
-  // looks
-  var lookImgs=d.querySelectorAll('#lookStage img'),cap=d.getElementById('lookCap'),picks=[].slice.call(d.querySelectorAll('.pick'));
-  var picksEl=d.querySelector('.picks'),pkI=0,pkT=0,pkAuto=!reduce&&('IntersectionObserver' in window);
-  function setLook(b){pkI=+b.dataset.i;picks.forEach(function(x){var on=x===b;x.setAttribute('aria-pressed',on);x.querySelector('small').textContent=on?'Showing now':'View this look'});
-    [].forEach.call(lookImgs,function(im,i){im.classList.toggle('on',i==b.dataset.i)});cap.textContent=b.dataset.cap}
-  picks.forEach(function(b){b.addEventListener('click',function(){if(pkAuto){pkAuto=false;clearInterval(pkT);picksEl.classList.remove('auto');cap.setAttribute('aria-live','polite')}setLook(b)})});
-  if(pkAuto){cap.setAttribute('aria-live','off');new IntersectionObserver(function(es){clearInterval(pkT);var v=es[0].isIntersecting&&pkAuto;picksEl.classList.toggle('auto',v);if(v)pkT=setInterval(function(){setLook(picks[(pkI+1)%picks.length])},4400)},{threshold:.55}).observe(d.getElementById('lookStage'))}
   // library
   var libImgs=d.querySelectorAll('#libStage img'),pieces=[].slice.call(d.querySelectorAll('.piece'));
   pieces.forEach(function(b){b.addEventListener('click',function(){

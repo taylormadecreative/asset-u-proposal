@@ -201,6 +201,17 @@ section{padding-block:clamp(4.5rem,10vw,8rem)}
 .fees li{padding-left:1.1rem;position:relative}
 .fees li::before{content:"";position:absolute;left:0;top:.72em;width:7px;height:1px;background:var(--gold)}
 
+.tw{overflow-x:auto;margin-top:.6rem;-webkit-overflow-scrolling:touch}
+.mt{width:100%;min-width:640px;border-collapse:collapse;font-size:.92rem;color:var(--ink)}
+.mt th,.mt td{text-align:left;padding:.75rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+.mt thead th{font:600 .72rem/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);border-bottom:2px solid var(--ink)}
+.mt td:nth-child(3),.mt td:nth-child(4),.mt tfoot td{white-space:nowrap;font-variant-numeric:tabular-nums}
+.mt td:nth-child(3){font-weight:600}
+.mt td:nth-child(2){color:var(--mute)}
+.mt .grp th{font:600 .72rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--turq-t);padding-top:1.4rem;border-bottom:1px solid var(--line)}
+.mt tfoot th,.mt tfoot td{font-weight:600;border-top:2px solid var(--ink);border-bottom:0;padding-top:1rem}
+.fees .small{font-size:.88rem}
+.mt tfoot td{color:var(--ink)}
 /* not included */
 .outs{display:grid;gap:1rem}
 @media (min-width:800px){.outs{grid-template-columns:repeat(2,1fr)}}
@@ -494,17 +505,29 @@ footer{padding:1.5rem 0 2.5rem;font-size:.8rem;color:var(--mute-d);background:va
       <li class="rv"><b>Revisions</b>Two rounds of changes on each site's design, and 30 days of fixes after each launch at no charge.</li>
       <li class="rv"><b>Ownership</b>ASSET-U owns every site, account, file and login from day one, with training and written editing instructions at handoff.</li>
     </ul>
-    <div class="fees rv">
+    <div class="fees rv" id="monthly">
       <h3>Monthly fees, paid directly by ASSET-U</h3>
-      <p>These go on ASSET-U's own accounts, so you control them. We list each one, with its current price, before you sign up.</p>
-      <ul>
-        <li>WordPress hosting and domains</li>
-        <li>Shopify plan and payment processing</li>
-        <li>Kajabi plan</li>
-        <li>The try-on, shoppable video and AI assistant apps</li>
-        <li>Any paid fonts or stock</li>
-        <li>Ad spend on Meta, TikTok and LinkedIn</li>
-      </ul>
+      <p>These go on ASSET-U's own accounts, so you control them and can cancel any of them. Each one starts on its smallest plan and moves up only when you see women using it. Prices are from each provider's own pricing page, checked November 20, 2026.</p>
+      <div class="tw"><table class="mt">
+        <thead><tr><th scope="col">What it does</th><th scope="col">Provider and plan</th><th scope="col">Monthly</th><th scope="col">Billed yearly</th></tr></thead>
+        <tbody>
+          <tr class="grp"><th colspan="4" scope="rowgroup">Platforms</th></tr>
+          <tr><td>Hosting for every WordPress site (Multisite)</td><td>Kinsta, Single 40GB</td><td>$50</td><td>$37.50/mo ($450/yr)</td></tr>
+          <tr><td>The House of HER Hair store</td><td>Shopify Basic. Card rate 2.9% + 30¢ per sale. Grow plan $105 when volume grows.</td><td>$39</td><td>$29/mo</td></tr>
+          <tr><td>Micro Masterclasses</td><td>Kajabi Growth (needed for the CRM connection)</td><td>$249</td><td>$199/mo ($2,388/yr)</td></tr>
+          <tr class="grp"><th colspan="4" scope="rowgroup">House of HER Hair add-ons</th></tr>
+          <tr><td>Her Mirror: wig try-on from her photo</td><td>TryHair Starter, 120 try-ons a month. Growth: $99 for 900.</td><td>$19.90</td><td>—</td></tr>
+          <tr><td>House assistant and the shop invite</td><td>VanChat Starter, 500 AI replies a month. Pro: $149 for 2,500.</td><td>$39</td><td>—</td></tr>
+          <tr><td>Her Studio: shoppable films and UGC</td><td>Moast Free, unlimited views. Pro: $15 to remove their branding.</td><td>$0</td><td>—</td></tr>
+          <tr><td>Optional: live-camera hair color try-on</td><td>Banuba Basic, 2,000 try-ons a month, 7-day free trial. Worth adding only if you sell color.</td><td>$249</td><td>—</td></tr>
+          <tr class="grp"><th colspan="4" scope="rowgroup">ASSET-U and House of HER Sports</th></tr>
+          <tr><td>"Ask ASSET-U" and the House of HER Sports assistant</td><td>Chatbase Basic with one extra agent ($25). Removing their branding is $99 more.</td><td>$175</td><td>$145/mo</td></tr>
+          <tr class="grp"><th colspan="4" scope="rowgroup">No monthly fee</th></tr>
+          <tr><td colspan="4">TikTok Shop channel · Facebook and Instagram shop · Google Shopping · ChatGPT business profile · Google Search Console · Google Analytics · Tag Manager · Bing Webmaster Tools · LinkedIn Insight Tag</td></tr>
+        </tbody>
+        <tfoot><tr><th scope="row" colspan="2">Starting total, without the optional color try-on</th><td>$571.90</td><td>About $470/mo</td></tr></tfoot>
+      </table></div>
+      <p class="small">Kajabi was already in your plan. Without it, the new monthly cost is $322.90, or about $270 billed yearly. Not included: card processing, ad spend and any paid fonts.</p>
     </div>
   </div>
 </section>
